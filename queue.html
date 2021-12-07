@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QUEUES</title>
+    <style>
+        .data{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, sans-serif;
+            font-size:20px;
+        }
+        .mainhed{
+                font-size:20px;
+                text-decoration:none;
+                color:red;
+                font-family:fantasy;
+            }
+            .subhed{
+                color: black;
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+            }
+            body{
+                background-repeat: no-repeat ;
+                background-color: 
+/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#f9e886+35,68d6c0+69,68d6c0+72 */
+background: rgb(249,232,134); /* Old browsers */
+background: -moz-linear-gradient(left,  rgba(249,232,134,1) 35%, rgba(104,214,192,1) 69%, rgba(104,214,192,1) 72%); /* FF3.6-15 */
+background: -webkit-linear-gradient(left,  rgba(249,232,134,1) 35%,rgba(104,214,192,1) 69%,rgba(104,214,192,1) 72%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to right,  rgba(249,232,134,1) 35%,rgba(104,214,192,1) 69%,rgba(104,214,192,1) 72%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f9e886', endColorstr='#68d6c0',GradientType=1 ); /* IE6-9 */
+
+
+            }
+            h4{
+                font-size:20px;
+                color:red;
+                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                text-transform: capitalize;
+            }
+            a{
+                text-decoration: none;
+            }
+            ::selection{
+                color: black;
+                background: lightslategray;
+            }
+    </style>
+</head>
+<body>
+    <h1 id="top"><a href="HOME.html">HOME PAGE</a></h1>
+    <h1>QUEUES</h1><ul>
+                <li class="subhed"><a href="#1">Queue</a></li>
+                <li class="subhed"><a href="#2">Types of Queue</a></li>
+                <li class="subhed"><a href="#3">Operations on a Queue</a></li>
+                <li class="subhed"><a href="#4">APPLICATIONS OF QUEUE</a></li>
+                <li class="subhed"><a href="#5">Implementation of Queue</a></li>
+                <li class="subhed"><a href="#6">Implementation of Simple Queue Using Arrays</a></li>
+                <ol type="1">
+                    <li class="subhed"><a href="#7">enQueue</a></li>
+                    <li class="subhed"><a href="#8">deQueue()</a></li>
+                    <li class="subhed"><a href="#9">display()</a></li>
+                    <li class="subhed"><a href="#10">Simple Queue ADT (Array Based)</a></li>
+                    <li class="subhed"><a href="#11">Simple Queue using Array program</a></li>
+                </ol>
+                <li class="subhed"><a href="#12">Implementation of Circular Queue Using Arrays</a></li>
+                <ol type="1">
+                    <li class="subhed"><a href="#13">Conditions : queue is full and empty</a></li>
+                    <li class="subhed"><a href="#14">enQueue</a></li>
+                    <li class="subhed"><a href="#15">deQueue</a></li>
+                    <li class="subhed"><a href="#16">display()</a></li>
+                </ol>
+                <li class="subhed"><a href="#17">Implementation of Double ended queue Using Arrays</a></li>
+                <ol type="1">
+                    <li class="subhed"><a href="#18">Enqueue</a></li>
+                    <li class="subhed"><a href="#19">Inject</a></li>
+                    <li class="subhed"><a href="#20">Deque</a></li>
+                    <li class="subhed"><a href="#21">Eject</a></li>
+                    <li class="subhed"><a href="#22">DeQueue ADT (Array Based)</a></li>
+                </ol>
+                <li class="subhed"><a href="#23">Implementation of Simple Queue Using Singly Linked List</a></li>
+                <ol type="1">
+                    <li class="subhed"><a href="#24">enQueue</a></li>
+                    <li class="subhed"><a href="#25">deQueue</a></li>
+                    <li class="subhed"><a href="#26">Simple Queue ADT (Linked List Based)</a></li>
+                </ol>
+                <li class="subhed"><a href="#27">Implementation of Deque Using Singly Linked List</a></li>
+                <ol type="1">
+                <li class="subhed"><a href="#28">enQueue</a></li>
+                <li class="subhed"><a href="#29">deQueue</a></li>
+                <li class="subhed"><a href="#30">Inject</a></li>
+                <li class="subhed"><a href="#31">Eject</a></li>
+                <li class="subhed"><a href="#32">Deque ADT (Linked List Based)</a></li>
+                </ol>
+                <li class="subhed"><a href="#33">Implementation of Circular queue Using Singly Linked List</a></li>
+                <ol type="1">
+                <li class="subhed"><a href="#34">enQueue</a></li>
+                <li class="subhed"><a href="#35">deQueue</a></li>
+                </ol>
+                
+            </ul>
+<h4 id="1">Queue</h4>
+    <pre class="data">
+<b>QUEUE:</b>
+• Queue is also a linear data structure in which the insertion and deletion operations are performed at two different ends as it is opposed to stacks. 
+<B>ENQUE:</B>The insertion is performed at one end (Called as enqueue).
+Insertion operation is performed at a position pointed by 'rear'
+
+<B>DEQUE:</B> deletion is performed at the other end  (called as dequeue). and the deletion operation is performed at a position pointed by 'front'.
+
+•To perform insertion and deletion we used two pointers rear and front.
+
+• In queue data structure, the insertion and deletion operations are performed based on FIFO (First In First Out) principle.
+
+    </pre>
+    <h4 id="2">Types of Queue</h4>
+    <pre class="data">
+1. <B>Simple or Normal Queue</B> - Where the insertion will happen from position zero to position Max. We cannot use the deleted 
+positions to insert elements again.
+
+2. <B>Circular Queue</B> - Last location is connected to the first location, when an element is inserted in the last position and if the first location is free then we can insert another element in the first location.
+
+3. <B>Deque (Doubly Ended Queue)</B> - It is a Queue where the insertion and deletion operations are performed at both ends.
+
+4. <B>Priority Queue</B> – In priority queues the items are associated with a value called priority. When you perform delete, first delete the highest priority one before deleting any lower priority item.
+    </pre>
+    <h4 id="3">Operations on a Queue</h4>
+    <pre class="data">
+• The following mandatory operations are performed on a queue data structure.
+
+• enQueue(value) - To insert an element into the queue. 
+• deQueue() - To delete an element from the queue.
+
+• The following Auxilary operations are performed on a queue data structure. 
+
+• display() - To display the elements of the queue
+    </pre>
+    <h4 id="4">APPLICATIONS OF QUEUE</h4>
+    <pre class="data">
+• Queues are widely used as waiting lists for a single shared resource like printer, disk, CPU, scanner, etc.
+
+• Queues are used to transfer data asynchronously (data not necessarily received at same rate as sent) between two processes (IO buffers), e.g., pipes, fle IO, sockets.
+
+• Queues are used as buffers on MP3 players and portable CD players, iPod playlist.
+
+• Queues are used in Playlist for jukebox to add songs to the end, play from the front of the list.
+
+• Queues are used in operating system for handling interrupts. When programming a real-time system that can be interrupted; for example, by a mouse click, it is necessary to process the interrupts immediately, before proceeding with the current job. If the interrupts have to be handled in the order of arrival, then a FIFO queue is the appropriate data structure.
+
+• Used as auxiliary data structure for algorithms, (for example in Breadth FirstAlgorithm queue is used as an auxiliary data structure).
+    </pre>
+    <h4 id="5">Implementation of Queue</h4>
+    <pre class="data">
+Queue data structure can be implemented in two ways. They are as follows:
+
+• Using Array
+• Using Linked List
+    </pre>
+    <h4 id="6">Implementation of Simple Queue Using Arrays</h4>
+    <pre class="data">
+<B>SIMPLE QUEUE: </B>Where the insertion will happen from position zero to position Max. We cannot use the deleted positions to insert elements again.
+    </pre>
+    <h4 id="7">enQueue</h4>
+    <pre class="data">
+• In a queue, the new element is always inserted at rear position.
+
+• steps to insert an element into the queue.
+
+• <B>STEP 1</B> - Check whether queue is FULL. 
+            (rear == SIZE-1)
+
+• <B>STEP 2</B> - If it is FULL, then display "Queue is FULL!!! Insertion is not possible!!!" and terminate the function.
+
+• <B>STEP 3</B> - If rear = -1 then set rear =0, front = 0; otherwise increment rear value by one.
+
+• <B>STEP 4</B> - set queue[rear] = value.
+
+<B>Time Complexity</B> = O(1)
+
+    </pre>
+    <h4 id="8">deQueue()</h4>
+    <pre class="data">
+deQueue (Queue, int, int) – Deletes the element from the queue
+
+In a queue, the element is always deleted from front position.
+
+<B>STEP 1</B> - Check whether queue is EMPTY. (front == rear == - 1)
+
+<B>STEP 2</B> - If it is EMPTY, then display "Queue is EMPTY! Deletion is not possible!" and terminate the function.
+
+<B>STEP 3</B> - If it is NOT EMPTY, then display queue[front] as deleted element.
+Now increment the front value by one (front++).
+
+<B>STEP 4</B> - Check if front > rear, if it is TRUE, then set both front and rear to '-1' (front = rear = -1).
+
+<B>Time Complexity</B> = O(1)
+    </pre>
+    <h4 id="9">display()</h4>
+    <pre class="data">
+• display(Queue, int, int) - Displays the elements of a Queue
+
+<B>STEP 1</B> - Check whether queue is EMPTY. (front == rear==-1)
+
+<B>STEP 2</B> - If it is EMPTY, then display "Queue is EMPTY!!!" and terminate the function.
+
+<B>STEP 3</B> - If it is NOT EMPTY, then define an integer variable 'i' and set 'i = front. 
+
+<B>STEP 4</B> - Display 'queue[i]' value and increment 'i' value by one (i++) 
+
+<B>STEP 5</B> - Repeat the step 4 until 'i' value reaches to rear (i LESS THAN OR EQUAL TO rear).
+
+<B>Time Complexity</B> = O(n)
+    </pre>
+    <h4 id="10">Simple Queue ADT (Array Based)</h4>
+    <pre class="data">
+<B>SIMPLE QUEUE ADT:</B>
+
+// Define the queue
+
+#define MAX 100
+Element Type Queue[MAX];
+int front = -1, rear = -1; 
+
+// Define the set of operations on queue
+
+void enQueu(Element Type[], int, int, Element Type);
+Element Type deQueue(Element Type[], int, int);
+void Display(Element Type [], int, int);
+    </pre>
+    <h4 id="11">Simple Queue using Array program</h4>
+    <pre class="data">
+DONT KNOW
+    </pre>
+    <h4 id="12">Implementation of Circular Queue Using Arrays</h4>
+    <pre class="data">
+<B>CIRCULAR QUEUE: </B>
+A circular queue is a linear data structure follows FIFO (First In First Out) principle and the last location is connected back to the first location to make a circle.
+    </pre>
+    <h4 id="13">Conditions : queue is full and empty</h4>
+    <pre class="data">
+• Queue is empty
+            front = rear = -1
+
+• Queue is full
+            front = = 0 and rear == MAX – 1 
+            or
+            front==rear+1
+    </pre>
+    <h4 id="14">enQueue</h4>
+    <pre class="data">
+• The enQueue() function inserts that value into the circular queue.
+
+<B>STEP 1</B> - Check whether queue is FULL. 
+        ( (rear == SIZE-1 && front == 0) || (front == rear+1) )
+
+<B>STEP 2</B> - If it is FULL, then display "Queue is FULL!!! Insertion is not
+possible!!!" and terminate the function.
+
+<B>STEP 3</B> - If it is NOT FULL, then check if rear == SIZE - 1 then set rear = 0 otherwise increment rear. // rear = (rear + 1) %size
+
+<B>STEP 4</B> - set queue[rear] = value
+
+<B>STEP 5</B> – Check if 'front == -1' if it is TRUE, then set front = 0.
+
+<B>Time Complexity</B> = O(1)
+    </pre>
+    <h4 id="15">deQueue</h4>
+    <pre class="data">
+• The deQueue() function deletes the first inserted element from the circular queue.
+
+<B>STEP 1</B> - Check whether queue is Empty. (rear == -1 && front -1)
+
+<B>STEP 2</B> - If it is Empty, then display "Queue is Empty!!! Deletion is not possible!!!" and terminate the function.
+
+<B>STEP 3</B> - If it is NOT EMPTY, then display queue[front] as deleted element .
+
+<B>STEP 4</B> - Check whether both front and rear are equal (front == rear), if it TRUE, then set both front and rear to '-1'. Check whether front == SIZE-1, if it is TRUE, then set front = 0.
+
+<B>Time Complexity</B> = O(1)
+    </pre>
+    <h4 id="16">display()</h4>
+    <pre class="data">
+• We can use the following steps to display the elements of a circular queue. 
+
+• <B>STEP 1</B> - Check whether queue is EMPTY (front == -1) 
+
+• <B>STEP 2</B> - If it is EMPTY, then display "Queue is EMPTY!!!" and terminate the function. 
+
+• <B>STEP 3</B> - If it is NOT EMPTY, then define an integer variable 'i' and set 'i = front'. 
+
+• <B>STEP 4</B> - Check whether 'front <= rear', if it is TRUE, then display 'queue[i]' value and increment 'i' value by one (i++). Repeat the same until 'i <= rear’ becomes FALSE. 
+
+• <B>STEP 5</B> - If 'front <= rear' is FALSE, then display 'queue[i]' value and increment 'i' value by one (i++). Repeat the same until'i <= SIZE - 1' becomes FALSE. 
+
+• <B>STEP 6</B> - Set i to 0. 
+
+• <B>STEP 7</B> - Again display 'Queue[i]' value and increment i value by one (i++). Repeat the same until 'i <= rear' becomes FALSE.
+
+<B>Time Complexity</B> = O(n)
+    </pre>
+    <h4 id="17">Implementation of Double ended queue Using Arrays
+    </h4>
+    <pre class="data">
+<B>Dequeue</B> - A queue where both the insertions and deletion operations are
+performed in both the ends.
+
+There are many ways to implement the deque, some of the implementations may not follow the principle of FIFO. We are following the implementation where it follows the  FIFO principle with respective to in which way we inserted the elements. We use four pointers, two referring at one end and the other two referring at the other end.
+    </pre>
+    <h4 id="18">Enqueue</h4>
+    <pre class="data">
+<B>Inserting value into the queue from the beginning</B>
+
+• <b>step 1</b> - Check whether queue is FULL. (rear1 == rear2-1)
+
+• <b>step 2</b> - If it is FULL, then display "Queue is FULL!!! Insertion is not possible!!!" and terminate the function.
+
+• <b>step 3</b> - If rear1 = -1 then set rear1 =0, front1 = 0; otherwise increment rear1 value by one.
+
+• <b>step 4</b> - set dequeue[rear1] = value. 
+
+Time Complexity = O(1)
+    </pre>
+    <h4 id="19">Inject</h4>
+    <pre class="data">
+<b>Inserting value into the dequeue from the ending</b>
+
+• <b>STEP 1</b> - Check whether queue is FULL. (rear1 == rear2 - 1)
+
+• <b>STEP 2</b> - If it is FULL, then display "Queue is FULL!!! Insertion is not possible!!!" and terminate the function.
+
+• <b>STEP 3</b> - If rear2 = MAX then set rear2 = MAX-1, front2 = MAX-1; otherwise decrement rear2 by one.
+
+• <b>STEP 4</b> - set dequeue[rear2] = value;
+
+<b>Time Complexity</b> = O(1)
+    </pre>
+    <h4 id="20">Deque</h4>
+    <pre class="data">
+<B>Deleting a value from the queue beginning.</B>
+
+• <B>STEP 1</B> - Check whether queue is EMPTY from the beginning. (front1 == -1)
+
+• <B>STEP 2</B> - If it is EMPTY, then display "Queue is EMPTY!!! Deletion is not possible!!!" and terminate the function.
+
+• <B>STEP 3</B> - If it is not EMPTY, then Display the deque[front1] as deleted element.
+
+• <B>STEP 4</B> - if rear1 == front1, set rear1=-1 and front1=-1; otherwise increment front1.
+
+<B>Time Complexity</B> = O(1)
+    </pre>
+    <h4 id="21">Eject</h4>
+    <pre class="data">
+<B>Deleting a value from the queue beginning.</B>
+
+• <B>STEP 1</B> - Check whether queue is EMPTY from the ending. (front2 ==MAX)
+
+• <B>STEP 2</B> - If it is EMPTY, then display "Queue is EMPTY!!! Deletion is not possible!!!" and terminate the function.
+
+• <B>STEP 3</B> - If it is not EMPTY, then Display the deque[front2] as deleted element.
+
+• <B>STEP 4</B> - if rear2==front2, set rear2= MAX and front2=MAX; otherwise decrement front2.
+
+<B>Time Complexity</B> = O(1
+    </pre>
+    <h4 id="22">DeQueue ADT (Array Based)</h4>
+    <pre class="data">
+<B>DEQUEUE ADT:</B>
+
+// Define the queue
+
+#define MAX 100
+Element Type deque[MAX];
+int front1 = -1, rear1 = -1, front2 = MAX, rear2 = MAX; 
+
+// Define the set of operations on queue
+void Enqueue(Element Type[], int, int, int, Element Type); // front1,rear1
+
+Element Type Dequeue(Element Type[], int, int); // fonr1, rear1
+
+void Inject(Element Type[], int, int, int, Element Type); // front2, rear2,
+
+Element Type Eject(Element Type[], int, int); // front1, rear1
+    </pre>
+    <h4 id="23">Implementation of Simple Queue Using Singly Linked List
+    </h4>
+    <h4 id="24">enQueue</h4>
+    <pre class="data">
+<b>Inserting value into the queue</b>
+
+<b>STEP 1</b> - create a new_node. If new_node creation failed, then display“Queue is FULL!!! Insertion is not possible!!!" and terminate the function.
+
+<b>STEP 2</b> - If Queue is NOT FULL, then insert the value in the new_node and NULL to new_node --> next . 
+
+<b>STEP 3</b> – If rear == NULL, then assign new_node to rear and front.
+
+<b>STEP 4</b> – If rear != NULL, then assign new_node to rear-->next also assign new_node to rear. 
+
+<B>Time Complexity</B> = O(1)
+    </pre>
+    <h4 id="25">deQueue</h4>
+    <pre class="data">
+Deleting a value from the dequeue 
+
+<B>STEP 1</B> – Check if Queue is EMPTY. front = NULL.
+
+<B>STEP 2</B> - If Queue is NOT EMPTY, then create temp pointer and assign front to temp. 
+
+<B>STEP 3</B> – Display the front-->data as deleted element.
+
+<B>STEP 4</B> – If rear = = front, then assign NULL to both rear and front; otherwise assign front-->next to front; Free the temp;
+
+<B>Time Complexity</B> = O(1)
+    </pre>
+    <h4 id="26">Simple Queue ADT (Linked List Based)</h4>
+    <pre class="data">
+
+// Define the queue
+
+typedef struct QUEUE Q;
+struct QUEUE
+{ Element Type data;
+Q *next;
+}*front = NULL, *rear=NULL;
+
+Element Type Queue[MAX];
+
+// Define the set of operations on queue
+
+void enQueu(Q *, Q*, Element Type); // front, rear, Element Type
+
+Element Type deQueue(Q *, Q*); //front, rear, 
+
+void Display(Q *,Q *);
+    </pre>
+    <h4 id="27">Implementation of Deque Using Singly Linked list
+    </h4>
+    <h4 id="28">enQueue</h4>
+    <pre class="data">
+<b>Inserting value into the Dequeue</b>
+
+<b>STEP  1</b> - create a new_node. If new_node creation failed, then display “Queue is FULL!!! Insertion is not possible!!!" and terminate the function.
+
+<b>STEP  2</b> - If Queue is NOT FULL, then insert the value in the new_node and NULL to new_node --> next. 
+
+<b>STEP  3</b> – If rear-1 == NULL, then assign new_node to rear-1 and front-1 and assign front-2 tonew_node-->next.
+
+<b>STEP  4</b> –If rear-1 != NULL, then assign rear-1-->next to new_node-->next, new_node to rear-1-->next and update rear-1 with new_node.
+
+Time Complexity = O(1)
+    </pre>
+    <h4 id="29">deQueue</h4>
+    <pre class="data">
+<b>Deleting a value from the dequeue</b>
+
+<b>STEP 1</b> – Check if Queue is EMPTY.front-1 = NULL.
+
+<b>STEP 2</b> - If Queue is NOT EMPTY, then create temp pointer and assign front-1 to temp. 
+
+<b>STEP 3</b> – Display the front-1data as deleted element.
+
+<b>STEP 4</b> – If rear-1 = = front, then assign NULL to both rear-1 and front-1; otherwise assign front-1next to front-1; free the temp;
+
+<B>Time Complexity</B> = O(1)
+    </pre>
+    <h4 id="30">Inject</h4>
+    <pre class="data">
+<B>Inserting value into the Dequeue</B>
+
+<b>STEP 1</b> - create a new_node. If new_node creation failed, then display “Queue is FULL!!! Insertion is not possible!!!" and terminate the function.
+
+<b>STEP 2</b> - If Queue is NOT FULL, then insert the value in the new_node and NULL to new_node --> next. 
+
+<b>STEP 3</b> – If rear-2 == NULL, then assign new_node to rear-2 and front-2; If rear-1 is not NULL then assign new_node to rear-1-->next.
+
+<b>STEP 4</b> –If rear-2 != NULL, then assign new_nod to rear-2-->next, and new_node to rear-2. 
+
+<B>Time Complexity</B> = O(1)
+    </pre>
+    <h4 id="31">Eject</h4>
+    <pre class="data">
+<B>Deleting a value from the dequeue from the end</B>
+
+<B>STEP 1</B> – Check if DeQueue is EMPTY. front-2 == NULL.
+
+<B>STEP 2</B> - If DeQue is NOT EMPTY, then create temp pointer and assign front-2 to temp. 
+
+<B>STEP 3</B> – Display the front-2data as deleted element.
+
+<B>STEP 4</B> – If rear-2 = = front-2, then assign NULL to both rear-2 and front-2 and if rear-1 is not NULL then assign NULL to rear-1-->next; otherwise assign front-1-->next to front-1; Free the temp; 
+
+<B>Time Complexity</B> = O(1)
+    </pre>
+    <h4 id="32">Deque ADT (Linked List Based)</h4>
+    <pre class="data">
+// Define the queue
+
+typedef struct QUEUE DQ;
+struct QUEUE
+{ Element Type data;
+Q *next;
+}*front1 = NULL, *rear1=NULL, *front2 = NULL, *rear2 = NULL;
+
+<b>Element Type Queue[MAX]</b>;
+
+// Define the set of operations on queue
+void enQueu(Q *, Q*, Q *, Element Type); // front-1, rear-1, front-2, inserting element
+
+Element Type deQueue(Q *, Q *); //front-1, rear-1 
+
+void Inject(Q *, Q*, Element Type); // front-2, rear-2, front-1, Element Type
+
+Element Type Eject(Q *, Q*, Q*); //front-2, rear-2, rear-1
+    </pre>
+    <h4 id="33">Implementation of Circular queue Using Singly Linked List</h4>
+    <h4 id="34">enQueue</h4>
+    <pre class="data">
+<B>STEP 1</B>: Create a new node dynamically and insert value into it.
+
+<B>STEP 2</B>: Check if front==NULL, if it is true then front = rear = (newly created node)
+
+<B>STEP 3</B>: If it is false then rear=(newly created node) and rear node always contains the address of the front node.
+    </pre>
+    <h4 id="35">deQueue</h4>
+    <pre class="data">
+<B>STEP 1</B>: Check whether queue is empty or not means front == NULL.
+
+<B>STEP 2</B>: If it is empty then display Queue is empty. If queue is not empty then step 3
+
+<B>STEP 3</B>: Check if (front==rear) if it is true then set front = rear = NULL else move the front forward in queue, update address of front in rear node and return the element.
+    </pre>
+    <a href="#top">BACK TO TOP</a>
+</body>
+</html>

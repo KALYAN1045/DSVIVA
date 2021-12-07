@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ANALYSIS OF ALGORITHMS</title>
+    <style>
+        .data{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, sans-serif;
+            font-size:20px;
+        }
+        .mainhed{
+                font-size:20px;
+                text-decoration:none;
+                color:red;
+                font-family:fantasy;
+            }
+            .subhed{
+                color: black;
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+            }
+            body{
+                background-repeat: no-repeat ;
+                background-color: 
+/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#f9e886+35,68d6c0+69,68d6c0+72 */
+background: rgb(249,232,134); /* Old browsers */
+background: -moz-linear-gradient(left,  rgba(249,232,134,1) 35%, rgba(104,214,192,1) 69%, rgba(104,214,192,1) 72%); /* FF3.6-15 */
+background: -webkit-linear-gradient(left,  rgba(249,232,134,1) 35%,rgba(104,214,192,1) 69%,rgba(104,214,192,1) 72%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to right,  rgba(249,232,134,1) 35%,rgba(104,214,192,1) 69%,rgba(104,214,192,1) 72%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f9e886', endColorstr='#68d6c0',GradientType=1 ); /* IE6-9 */
+
+
+            }
+            h4{
+                font-size:20px;
+                color:red;
+                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                text-transform: capitalize;
+            }
+            a{
+                text-decoration: none;
+            }
+            ::selection{
+                color: black;
+                background: lightslategray;
+            }
+    </style>
+</head>
+<body>
+    <h1 id="top"><a href="HOME.html">HOME PAGE</a></h1>
+    <h1>ANALYSIS OF ALGORITHMS</h1>
+            <ul type=disc>
+                <li class="subhed"><a href="#WIAA">What is an algorithm?</a></li>
+                <li class="subhed"><a href="#ADS">Algorithm design strategies</a></li>
+                <li class="subhed"><a href="#POA">PROPERTIES OF AN ALGORITHM</a></li>
+                <li class="subhed"><a href="#AOA">Analysis of Algorithms</a></li>
+                <li class="subhed"><a href="#POP">Performance of a Program</a></li>
+                <li class="subhed"><a href="#SC">Space Complexity</a></li>
+                <li class="subhed"><a href="#TC">Time Complexity</a></li>
+                <li class="subhed"><a href="#FAFC">Faster Algorithm vs. Faster CPU</a></li>
+                <li class="subhed"><a href="#HTFTC">How to find time complexity?</a></li>
+                <li class="subhed"><a href="#LL">Linear Loop</a></li>
+                <li class="subhed"><a href="#LOL">Logarithmic loop</a></li>
+                <li class="subhed"><a href="#NL">Nested Loops</a></li>
+                <li class="subhed"><a href="#COA">Complexity of Algorithms</a></li>
+                <li class="subhed"><a href="#AA">Asymptotic Analysis</a></li>
+                <li class="subhed"><a href="#BON">O ( Big-Oh notation )</a></li>
+                <li class="subhed"><a href="#RFFBO">Rules for finding Big – Oh</a></li>
+                <li class="subhed"><a href="#BOE">Big-Oh Example</a></li>
+                <li class="subhed"><a href="#BOMN">Ω ( Big Omega notation )</a></li>
+                <li class="subhed"><a href="#BOME">Big-Omega Example</a></li>
+                <li class="subhed"><a href="#TN">θ ( Theta notation )</a></li>
+                <li class="subhed"><a href="#TE">Theta (θ) Example</a></li>
+                <li class="subhed"><a href="#MT">Master Theorem</a></li>
+                <li class="subhed"><a href="#MTE">Master Theorem (Example)</a></li>
+                <li class="subhed"><a href="#NCDA">Numerical Comparison of Different Algorithms</a></li>
+                <li class="subhed"><a href="#CODA">Comparison of Different Algorithms</a></li>
+            </ul><br>
+<h4 id="WIAA">WHAT IS AN ALGORITHM?</h4>
+    <pre class="data">• Algorithm is a sequence of well defined, simple, unambiguous and effective statements, which when executed sequentially will produce the desired result in finite amount of time.
+    </pre>
+    <h4 id="ADS">ALGORITHM DESIGN STATERGIES</h4>
+    <pre class="data">
+1. BRUTE FORCE - follow definition / try all possibilities.
+
+2. DIVIDE AND CONQUER - break problem into distinct subproblems.
+
+3. GREEDY APPROACH - repeatedly do what is best now
+
+4. DYNAMIC PROGRAMMING - break problem into overlapping subproblems.
+
+5. BACKTRACKING - It tries out different sequences of decisions until we find one that "works.“
+
+6. BRANCH & BOUND - Systematic method for solving optimization problems
+
+    </pre>
+    <h4 id="POA">PROPERTIES OF ALGORITHM</h4>
+    <pre class="data">
+1. INPUT - An algorithm takes zero or more inputs.
+
+2. OUTPUT - An algorithm results in one or more outputs.
+
+3. All operations can be carried out in a finite amount of time
+
+4. An algorithm should be efficient and flexible
+
+5. FINITENESS - An algorithm must terminate after a finite number of steps.
+
+6. DEFINITENESS - Every instruction must be clear and unambiguous.
+
+7. EFFECTIVENESS - Every instruction must be sufficiently basic that it can in principle be carried out by a person using only pencil and paper. It is not enough that each operation be definite, but it must also be feasible.
+
+    </pre>
+    <h4 id="AOA">ANALYSIS OF ALGORITHM</h4>
+    <pre class="data">The field of computer science, which studies efficiency of algorithms, is known as analysis of algorithms.
+
+Programs derived from two algorithms for solving the same problem should both be
+▪ Machine independent (Assumes RAM model)
+▪ Language independent
+▪ Environment independent (load on the system,...)
+▪ Realistic
+
+    </pre>
+    <h4 id="POP">PERFORMANCE OF PROGRAN</h4>
+    <pre class="data">The performance of a program is the amount resources like, computer memory and time needed to run a program. 
+
+The performance of most of the algorithms are measures using two metrics:
+1. Space Complexity
+2. Time Complexity
+
+    </pre>
+    <h4 id="SC">SPACE COMPLEXITY</h4>
+    <pre class="data">Space Complexity -The space complexity of a program is the amount of memory it needs to run to completion.
+
+The space need by a program has the following components:
+
+1. <b>Instruction space:</b> Instruction space is the space needed to store the compiled version of the program instructions.
+
+2. <b>Data space:</b> Data space is the space needed to store all constant and variable values.
+
+3. <b>Environment stack space:</b> The environment stack is used to save information needed to resume execution of partially completed functions.
+
+    </pre>
+    <h4 id="TC">TIME COMPLEXITY</h4>
+    <pre class="data">• <b>Time Complexity -</b> The time needed by an algorithm expressed as a function of the size of a problem is called the TIME COMPLEXITY of the algorithm.
+
+• The time complexity of a program is the amount of computer time it needs to run to completion.
+
+• The behavior of the complexity as size increases is called the asymptotic time complexity.
+
+<b>ON WHAT DOES TIME COMPLEXITY DEPEND ON:</b>
+
+Depends on instructions execution
+– Instructions: Dependent or Independent
+
+Instruction is independent on input size is said to be constant time.
+– EX FOR NOT DEPENDING: int i; // doesn’t depend on input size;
+
+-EX FOR DEPENDING: i < n // it may depend on input size (n).
+
+<b>FORMULA FOR TIME COMPLEXITY:</b>
+
+T(P)= C + tp = compile time + Running time
+
+<b>T(P)</b> - is the running time of a program
+
+<b>Fixed Part</b>: C-compile time independent of the instance.
+
+<b>tp</b> -variable part, runtime depends on problem instance.
+    </pre>
+    <h4 id="FAFC">FASTER ALGO VS FASTER CPU</h4>
+    <pre class="data">• A faster algorithm running on a slower machine will always win for large enough instances
+
+<b>FOR EX:</b>
+
+• Suppose algorithm S1 sorts n keys in 2n square instructions.
+• Suppose computer C1 executes 1 billion instruc/sec
+• When n = 1 million, takes 2000 sec
+• Suppose algorithm S2 sorts n keys in 50nlog<sub>2</sub>n instructions
+• Suppose computer C2 executes 10 million instruc/sec
+• When n = 1 million, takes 100 sec
+
+    </pre>
+    <h4 id="HTFTC">HOW TO FIND TIME COMPLEXITY?</h4>
+    <pre class="data">It depends on factors such as input, programming language and runtime, coding skill, compiler, operating system, and hardware.
+
+    </pre>
+    <h4 id="LL">LINEAR LOOP</h4>
+    <pre class="data">EX: for(i=0;i<100;i++)
+statement block;
+• 100-times
+• If N=100,
+• Then time complexity is N
+    </pre>
+    <h4 id="LOL">LOGARITHMIC LOOP</h4>
+    <pre class="data">EX: for(i=1;i<1000; i=i*2)
+statement block;
+• 10-times
+• If N=100,
+• Then time complexity is log(N) 
+
+    </pre>
+    <h4 id="NL">NESTED LOOP</h4>
+    <pre class="data">EX: M=10,N=5;
+for(i=0;i less than M);
+DONT KNOW SIR
+
+    </pre>
+    <h4 id="COA">COMLEXITY OF ALGORITHMS</h4>
+    <pre class="data">Algorithms can be evaluated by a variety of criteria. Most often we shall be interested in the rate of growth of the time or space required to solve larger and larger instances of a problem.
+
+We will associate with the problem an integer, called the size of the problem, which is a measure of the quantity of input data.
+
+The complexity function f(n) for certain cases are:
+
+1. <b>Best Case :</b> The minimum possible value of f(n) is called the best case.
+2. <b>Average Case :</b> The expected value of f(n).
+3. <b>Worst Case :</b> The maximum value of f(n) for any key possible input.
+
+    </pre>
+    <h4 id="AA">ASYMPTOTIC AMALYSIS</h4>
+    <pre class="data">The various asymptotic notations are:
+1. O ( Big Oh notation )
+2. Ω ( Big Omega notation )
+3. θ ( Theta notation )
+
+    </pre>
+    <h4 id="BON">BIG-OH NOTATION</h4>
+    <pre class="data">It is used to define the upper bound of a algorithm in terms of Time Complexity.
+
+It indicates the Asymptotic upper bound by an algorithm for all input values.
+
+<b>Definition: </b>
+
+– Given function f(n) and g(n) , we say that f(n) is O(g(n)) if there are exist positive constants c and n0 such that f(n) ≤ cg(n) for n ≥ n0
+    </pre>
+    <h4 id="RFFBO">RULES FOR FINDING BIG-OH</h4>
+    <pre class="data">
+1. If f(n) is a polynomial of degree d,then f(n) is O(n<sup>d</sup>), i.e,
+– Drop lowest term
+– Drop constant factors
+
+2. Use the simplest possible class of
+function
+– Say “2n is O(n)” instead of “2n is O(n<sup>2</sup>)”
+
+3. Use the simplest expression of the class
+– Say “3n+5 is O(n)” instead of
+“3n+5 is O(3n)”
+
+4. If T1(n) = O(f(n)) and T2(n) = O(g(n)),then
+– T1(n) + T2(n) = max( O(f(n)), O(g(n))),
+– T1(n) * T2(n) = O(f(n) * g(n))
+
+
+    </pre>
+    <h4 id="BOE">BIG-OH EXAMPLE</h4>
+    <pre class="data">• Consider the following f(n) and g(n)...
+f(n) = 3n + 2
+g(n) = n
+
+• If we want to represent f(n) as O(g(n)) then it must satisfy f(n) <= c g(n) for all values of c > 0 and n0>= 1
+f(n) <= c g(n)
+⇒3n + 2 <= c n
+
+• Above condition is always TRUE for all values if c = 4 and n >= 2.
+By using Big - Oh notation we can represent the time complexity as follows...
+3n + 2 = O(n)
+
+• 5n<sup>2</sup> = O(n<sup>2</sup>), c = 5, n0 >=1 
+
+    </pre>
+    <h4 id="BOMN">BIG-OMEGA NOTATION</h4>
+    <pre class="data">Big - Omega notation is used to define the lower bound of an algorithm in terms of Time Complexity. Always indicates the minimum time required by an algorithm for all input values.
+
+Definition: 
+
+• Given function f(n) and g(n) , we say that f(n) is Ω(g(n)) 
+if there are exist positive constants c and n0 such that 
+f(n) ≥ cg(n) for all n ≥ n0. 
+    </pre>
+    <h4 id="BOME">BIG-OMEGA EXAMPLE</h4>
+    <pre class="data">f(n) = 10n2 + 4n + 2
+Let us take g(n) = n2
+c = 10 & n<sub>0</sub>> = 0
+Let us check the above condition
+10n<sup>2</sup>> + 4n + 2 ≥ 10n2
+for all n ≥ 0
+The condition is satisfied. Hence f(n) = Ω(n<sup>2</sup>>).
+
+    </pre>
+    <h4 id="TN">THETA NOTATION</h4>
+    <pre class="data">• The theta notation is used when the function f(n) can be bounded by both from above and below the same function g(n).
+
+Definition: f(n) = θ (g(n)), if there exist positive constants c1, c2, and n0 such that 0 ≤ c1 g(n)≤ f (n) ≤c2 g(n) for all n ≥ n0 }
+
+    </pre>
+    <h4 id="TE">THETA EXAMPLE</h4>
+    <pre class="data">• 5n<sup>2</sup>> is θ(n<sup>2</sup>)
+f(n) = 5n<sup>2</sup>, g(n) = n<sup>2</sup>
+It is true for the values: c1= 5, c2= 6 and n0 >= 1
+
+Note: f(n) is θ(g(n)) if it is Ω(n2) and O(n2).
+
+    </pre>
+    <h4 id="MT">MASTER THEOREM</h4>
+    <pre class="data">The Master Theorem applies to recurrences of the following form: 
+T (n) = aT (𝒏/𝒃) + f(n)
+
+where a ≥ 1 and b > 1 are constants and f(n) is an asymptotically positive function.
+
+There are 3 cases: 
+
+1. If f(n) = Θ (𝑛<sup>𝑙𝑜g<sub>b</sub>𝑎−𝜖</sup>) for some constant ↋ > 0, then T (n) = Θ (𝑛<sup>𝑙𝑜g<sub>b</sub>𝑎−𝜖</sup>).
+
+2. If f(n) = Θ (𝑛<sup>𝑙𝑜g<sub>𝑏</sub>𝑎</sup>𝑙𝑜𝑔<sup>k</sup>>n),with k ≥ 0, then T(n) = Θ(𝑛<sup>𝑙𝑜g<sub>b</sub>𝑎</sup>𝑙𝑜𝑔<sup>𝑘+1</sup>n)
+
+3. If f(n) = Ω (𝑛<sup>𝑙𝑜g<sub>b</sub>𝑎+𝜖</sup>) with ↋ > 0, and f(n) satisfies the regularity condition, then 
+                     T(n) = Θ(f(n)). 
+
+Regularity condition: a.f(𝒏/𝒃) ≤ c.f(n) for some constant c < 1 and all sufficiently large n.
+
+    </pre>
+    <h4 id="MTE">MASTER THEOREM EXAMPLE</h4>
+    <pre class="data">6. T (n) = 16T (n/4) + n
+
+Solution :
+
+<b>case-1 :</b>
+T(n) = Θ(n2)
+
+    </pre>
+    <h4 id="NCDA">NUMERICAL COMPARISION OF DIFFERENT ALGO </h4>
+    <pre class="data">
+        <img src="3.png" alt="">
+
+    </pre>
+    <h4 id="CODA">COMPARISION OF DIFFERENT ALGO</h4>
+    <pre class="data">
+        <img src="4.png" alt="">
+    </pre>
+    <a href="#top">BACK TO TOP</a>
+
+</body>
+</html>

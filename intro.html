@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INRO TO DS</title>
+    <style>
+        .data{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, sans-serif;
+            font-size:20px;
+        }
+        .mainhed{
+                font-size:20px;
+                text-decoration:none;
+                color:red;
+                font-family:fantasy;
+            }
+            .subhed{
+                color: black;
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+            }
+            body{
+                background-repeat: no-repeat ;
+                background-color: 
+/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#f9e886+35,68d6c0+69,68d6c0+72 */
+background: rgb(249,232,134); /* Old browsers */
+background: -moz-linear-gradient(left,  rgba(249,232,134,1) 35%, rgba(104,214,192,1) 69%, rgba(104,214,192,1) 72%); /* FF3.6-15 */
+background: -webkit-linear-gradient(left,  rgba(249,232,134,1) 35%,rgba(104,214,192,1) 69%,rgba(104,214,192,1) 72%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to right,  rgba(249,232,134,1) 35%,rgba(104,214,192,1) 69%,rgba(104,214,192,1) 72%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f9e886', endColorstr='#68d6c0',GradientType=1 ); /* IE6-9 */
+
+
+            }
+            h4{
+                font-size:20px;
+                color:red;
+                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                text-transform: capitalize;
+            }
+            a{
+                text-decoration: none;
+            }
+            ::selection{
+                color: black;
+                background: lightslategray;
+            }
+    </style>
+</head>
+<body>
+    <h1 id="top"><a href="HOME.html">HOME PAGE</a></h1>
+    <h1>INRODUCTION TO DATA STRUCTURES</h1>
+    <ul type=disc>
+            <li class="subhed"><a href="#problemsolving">Problem Solving</a></li>
+            <li class="subhed"><a href="#understandingprob">Understanding the Problem</a></li>
+            <li class="subhed"><a href="#DAM">Develop a Model</a></li>
+            <li class="subhed"><a href="#CAN">Can we write the procedure to solve a problem in formal way</a></li>
+            <li class="subhed"><a href="#ALGO">Algorithm</a></li>
+            <li class="subhed"><a href="#TALGO">Terms in Algorithm</a></li>
+            <li class="subhed"><a href="#PROG">What is a Program?</a></li>
+            <li class="subhed"><a href="#DAT">What is data ?</a></li>
+            <li class="subhed"><a href="#ADS">Aim of Data Structure</a></li>
+            <li class="subhed"><a href="#DS">Data Structure</a></li>
+            <li class="subhed"><a href="#ADT">Abstract Datatype(ADT)</a></li>
+            <li class="subhed"><a href="#NDS">Need of Data Structures</a></li>
+            <li class="subhed"><a href="#CDS">Characteristics of Data Structure</a></li>
+            <li class="subhed"><a href="#AODS">Advantages of Data Structures</a></li>
+            <li class="subhed"><a href="#TDS">Types of Data Structures</a></li>
+            <li class="subhed"><a href="#ODS">Operations on Data Structures</a></li>
+        </ul>
+    <h4 id="problemsolving">PROBLEM SOLVING</h4>
+    <pre class="data">•Problem Solving is the sequential process of analyzing information related to a given
+situation and generating appropriate response options.
+
+• The following are the general steps followed to solve a problem efficiently:
+
+1. Understand the Problem.
+2. Formulate a Model.
+3. Develop an Algorithm.
+4. Select the proper data structures for implementing algorithm.
+5. Show that your algorithm works (prove its correctness).
+6. Study the efficiency of algorithm (Time and space complexities).
+7. Write the Program in any language (Algorithms + Data Structures).
+8. Test the Program.</pre>
+    <h4 id="understandingprob">UNDERSTANDING THE PROBLEM</h4>
+    <pre class="data">• What input data/information is available?
+• What does it represent?
+• What format is it in?
+• Is anything missing? Do I have everything needed?
+• What output information am I trying to produce?
+• What do I want the result to look like text, picture, graph … ?
+• What am I going to have to compute ?
+        </pre>
+    <h4 id="DAM">DEVELOP A MODEL</h4>
+    <pre class="data">▪ What is a model?
+▪ Identify a formula for solving the problem.
+▪ Model to solve the problem can be generated after analyzing the problem and its
+possible solution.
+▪ In the problem of finding out the sum, the values are numbers and can be added.</pre> 
+    <h4 id="CAN">CAN WE WRITE THE PROCEDURE TO SOLVE A PROBLEM IN FORMAL WAY?</h4>
+    <pre class="data">• Yes.
+• A formal way representing the solution to the problem is called algorithm.
+– The sequence of steps we have followed for preparing coffee is an algorithm.
+– The recipes that we find in a cook book are also algorithms.
+</pre>
+     <h4 id="ALGO">ALGORITHM</h4>
+    <pre class="data">• Algorithm is a sequence of well defined, simple, unambiguous and
+effective statements, which when executed sequentially will produce the
+desired result in finite amount of time.</pre>
+     <h4 id="TALGO">TERMS OF ALGORITHM</h4>
+    <pre class="data">• SIMPLE: A statement that is written in a simple language and is understandable to the reader.
+– Complex and compound statements are to be avoided. 
+– General strategy is KISS – Keep It Simple Stupid.
+
+• WELL DEFINED: A statement is well defined if it is unambiguous and its objects are 
+independent of their representation.
+– Heat water is not well defined. Has an ambiguity. Boil water is well defined.
+
+• UNAMBIGUOUSs: A statement without ambiguities and is based on mathematical facts
+– The expression a/b/c. Is it a/(b/c) or (a/b)/c?
+
+• EFFECTIVE: A statement that can be properly executed and it must change the state.
+x = x is well defined but is not effective.
+
+• FINITE TIME: Time taken to complete the solution must be finite
+– Add 1 to each integer is simple, unambiguous, effective but can not be executed
+in finite amount of time.
+
+• SEQUENTIAL EXECUTION: All the statements must be executed in sequential order one
+after other – including branching statements.</pre>
+     <h4 id="PROG">WHAT IS PROGRAM</h4>
+    <pre class="data">• Program is an implementation of algorithm in a specific language by following the rules of the language.
+
+DIFFERENCE B/W ALGO & PROGRAM:
+
+• Algorithm must terminate in finite amount of time, where as program can be infinite, if it is not properly coded.</pre>
+     <h4 id="DAT">WHAT IS DATA?</h4>
+    <pre class="data"><i>“Data can be defined as an elementary value or the collection of values” .</i>
+
+For example, student’s name and its id are the data about the student. 
+
+In general data is an input quantity or value processed by the algorithm.
+</pre>
+     <h4 id="ADS">AIM OF DATA STRUCTURE?</h4>
+    <pre class="data">To store/organize a given data in the memory of computer so that each subsequent operations (query/update) can be performed efficiently.</pre>
+     <h4 id="DS">DATA STRUCTURE</h4>
+    <pre class="data">• Data Structure is a particular way of storing and organizing data in a computer so that it can be used efficiently (operations on the data can be done more efficiently).
+
+• Data structure is a representation of logical relationship existing between individual elements of data.
+
+• Data Structure is a mathematical model of data.
+
+• Data Structure is a logical implementation of data.
+
+• The term data structure is used to describe the way data is stored, and the term algorithm is used to describe the way data is processed.
+
+• Data structures and algorithms are interrelated.
+
+• Choosing a data structure affects the kind of algorithm you might use, and choosing an algorithm affects the data structures we use.
+
+• To develop a program of an algorithm we should select an appropriate data structure for that algorithm. Therefore, data structure is also represented as:
+
+Algorithm + Data structure = Program</pre>
+     <h4 id="ADT">ABSTRACT DATA TYPE(ADT)</h4>
+    <pre class="data">• “ADTs are mathematical specifications of set of data and the set of operations that can be performed on the data without specifying the implementation details”.
+
+• ADT consists of two parts:
+1. Declaration of data.
+2. Declaration of operations.
+
+EXAMPLE OF ADT: 
+
+• Queue is an ADT which can be defined as a sequence of operations empty(Q), enqueue(x, Q) and dequeue(Q). This can be implemented using the data structures like,
+1. Array
+2. Linked List
+    </pre>
+     <h4 id="NDS">NEED OF DATA STRUCTURES</h4>
+    <pre class="data">• In order to solve the processor speed, data search and multiple request problems, data structures are used.
+
+• Data is organized to form a data structure in such a way that all items are not required to be searched and required data can be searched instantly.</pre>
+     <h4 id="CDS">CHARACTERISTICS OF DATA STRUCTURES</h4>
+    <pre class="data">• It contains data items that can be elementary item, group item or another data structure.
+
+• It has a set of operations that can be performed on data items. Such as searching, insertion etc.
+
+• It describes the rules of how the data items are related to each other.</pre>
+     <h4 id="AODS">ADVANTAGES OF DATA STRUCTURES</h4>
+    <pre class="data">• Efficiency: Efficiency of a program depends upon the choice of data structures.
+    
+• For example, we have some data and we need to perform the search for a particular record more frequently. In that case, if we organize our data in an array, we will have to search sequentially element by element. Hence, using array may not be very efficient here. There are better data structures which can make the search process efficient like ordered array, binary search tree or hash tables.
+
+• Reusability: Data structures are reusable, i.e. once we have implemented a particular data structure, we can use it at any other place. Implementation of data structures can be compiled into libraries which can be used by different clients.
+
+• Abstraction: Data structure is specified by the ADT which provides a level of abstraction. The client program uses the data structure through interface only, without getting into the implementation details.
+
+</pre>
+     <h4 id="TDS">TYPES OF DS</h4>
+    <pre class="data">
+        <img src="Screenshot (111).png" alt="">
+Data structures are divided in to two categories.
+
+Primitive data structures: The primitive data structures can be
+manipulated or operated by the machine instruction.
+
+Example – int, float, char, etc are the some of the different data structures provided in c language.
+
+Non-Primitive data structures: The data structures which can not be
+directly operated by the machine instructions. These are derived from the primitive data structures.
+
+Example – Arrays, Structures, Stack, Queues, Linked Lists, trees, graphs, etc.
+
+<img src="Screenshot (110).png" width=500px alt="">
+
+1. Linear Data structure – 
+Collection of nodes which are logically (or physically) adjacent, i.e., logical adjacency is maintained by the pointers. 
+
+In linear data structures, each element has the successors and predecessors except the first and last element.
+
+In linear data structure, single level is involved. Therefore, we can
+traverse all the elements in single run only.
+
+Example – Arrays, Linked Lists, Stacks, Queues, etc.
+
+NON-LINEAR DS -  
+Non-Linear Data structure can be constructed as a collection of
+randomly distributed set of data items joined together by using a special pointer (tag). In non-linear data structure the relationship of adjacency is not maintained.
+
+In a non-linear data structure, single level is not involved.Therefore, we can’t traverse all the elements in single run only.
+
+Example – Tree, Graph, etc.
+
+    </pre>
+     <h4 id="ODS">OPERATIONS ON DATA STRUCTURES</h4>
+    <pre class="data">
+• Inserting: 
+• to insert new element into data structure.
+• Deleting:
+• To remove element from data structure.
+• Traversing: 
+• Visiting or accessing each element
+• for better performance, visit only once.
+• Searching: 
+• search an element is presented or not. 
+• return the location of item
+• Sorting: 
+• To arrange the elements in order
+• Merging: 
+• combining data items into a single list of items.
+</pre>
+
+<a href="#top">BACK TO TOP</a>
+    
+</body>
+</html>

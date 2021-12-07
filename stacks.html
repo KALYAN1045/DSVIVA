@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STACKS</title>
+    <style>
+        .data{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, sans-serif;
+            font-size:20px;
+        }
+        .mainhed{
+                font-size:20px;
+                text-decoration:none;
+                color:red;
+                font-family:fantasy;
+            }
+            .subhed{
+                color: black;
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+            }
+            body{
+                background-repeat: no-repeat ;
+                background-color: 
+/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#f9e886+35,68d6c0+69,68d6c0+72 */
+background: rgb(249,232,134); /* Old browsers */
+background: -moz-linear-gradient(left,  rgba(249,232,134,1) 35%, rgba(104,214,192,1) 69%, rgba(104,214,192,1) 72%); /* FF3.6-15 */
+background: -webkit-linear-gradient(left,  rgba(249,232,134,1) 35%,rgba(104,214,192,1) 69%,rgba(104,214,192,1) 72%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to right,  rgba(249,232,134,1) 35%,rgba(104,214,192,1) 69%,rgba(104,214,192,1) 72%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f9e886', endColorstr='#68d6c0',GradientType=1 ); /* IE6-9 */
+
+
+            }
+            h4{
+                font-size:20px;
+                color:red;
+                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                text-transform: capitalize;
+            }
+            a{
+                text-decoration: none;
+            }
+            ::selection{
+                color: black;
+                background: lightslategray;
+            }
+    </style>
+</head>
+<body>
+    <h1 id="top"><a href="HOME.html">HOME PAGE</a></h1>
+    <h1>STACKS</h1>
+    <ul type=disc>
+                <li class="subhed"><a href="#1">stack</a></li>
+                <li class="subhed"><a href="#2">PUSH</a></li>
+                <li class="subhed"><a href="#3">POP</a></li>
+                <li class="subhed"><a href="#4">Stack Operations</a></li>
+                <li class="subhed"><a href="#5">Applications of STACK</a></li>
+                <li class="subhed"><a href="#6">Implementation of Stack using Arrays</a></li>
+                <ol type="1">
+                <li class="subhed"><a href="#7">STACK ADT (Array Based)</a></li>
+                <li class="subhed"><a href="#8">Push operation</a></li>
+                <li class="subhed"><a href="#9">POP operation</a></li>
+                <li class="subhed"><a href="#10">STACK PROGRAM</a></li></ol>
+                <li class="subhed"><a href="#11">Implementation of STACK using Linked Lists</a></li>
+                <ol type="1">
+                <li class="subhed"><a href="#12">STACK ADT (Linked List Based (SLL))</a></li>
+                <li class="subhed"><a href="#13">Push operation</a></li>
+                <li class="subhed"><a href="#14">Pop operation</a></li></ol>
+                <li class="subhed"><a href="#15">Parenthesis checking</a></li>
+                <li class="subhed"><a href="#16">Notations – infix, prefix and postfix</a></li>
+                <ol type="1">
+                <li class="subhed"><a href="#17">Infix Notation</a></li>
+                <li class="subhed"><a href="#18">Prefix Notation</a></li>
+                <li class="subhed"><a href="#19">Postfix Notation</a></li></ol>
+                <li class="subhed"><a href="#20">Evaluation of expressions</a></li>
+                <li class="subhed"><a href="#21">Precedence and Associativity of operators</a></li>
+                <li class="subhed"><a href="#22">Infix to postfix Conversion</a></li>
+                <li class="subhed"><a href="#23">Infix to Prefix Conversion</a></li>
+                <li class="subhed"><a href="#24">Prefix to Infix Conversion</a></li>
+                <li class="subhed"><a href="#25">Prefix to Postfix Conversion</a></li>
+                <li class="subhed"><a href="#26">Postfix to Infix Conversion</a></li>
+                <li class="subhed"><a href="#27">Postfix to Prefix Conversion</a></li>
+                <li class="subhed"><a href="#28">TABLE OF CONVERSIONS</a></li>
+            </ul>
+    <h4 id="1">stack</h4>
+    <pre class="data">
+<b>STACK: </b>Stack is a linear data structure in which the insertion and deletion operations are performed at only one end. 
+
+<b>TOP: </b>
+• In a stack, adding and removing of elements are performed at a single position which is known as "top”. 
+• That means, a new element is added at top of the stack and an element is removed from the top of the stack.
+    </pre>
+    <h4 id="2">PUSH</h4>
+    <pre class="data">
+Inserting an element into stack at top is said to be PUSH operation. 
+    </pre>
+    <h4 id="3">POP</h4>
+    <pre class="data">
+Deleting element from top of the stack is said to be POP operation
+    </pre>
+    <h4 id="4">Stack Operations</h4>
+    <pre class="data">
+• Standard operations
+
+    • Push
+        • To insert an element at the top of stack
+
+    • Pop
+        • To remove element from the top of stack
+
+    • Display (user defined)
+        • To display the elements of stack
+        • Usually once it is done stack will be empty.
+
+    • Peak (user defined)
+        • Returns the top of the element
+    </pre>
+    <h4 id="5">Applications of STACK</h4>
+    <pre class="data">
+
+• Reversing a list
+
+• Parentheses checking
+
+• Conversion of an infix expression into a postfix expression
+
+• Evaluation of a postfix expression
+
+• Conversion of an infix expression into a prefix expression
+
+• Evaluation of a prefix expression
+
+• Recursion
+
+• Tower of Hanoi
+
+• DFS technique
+    </pre>
+    <h4 id="6">Implementation of Stack using Arrays</h4>
+    <pre class="data">
+the basic operations of stack are PUSH(), POP() and DISPLAY().
+    </pre>
+    <h4 id="7">STACK ADT (Array Based)</h4>
+    <pre class="data">
+// Define the stack
+
+#define MAX 100
+Element Type stack[MAX];
+int top = -1; 
+
+// Define the set of operations on stack
+
+void push(Element Type[], int, Element Type);
+Element Type pop(stack, top);
+void Display(Element Type [], int)
+Element Type Peak(Element Type [], int);
+    </pre>
+    <h4 id="8">Push operation</h4>
+    <pre class="data">
+<B>PROCESS:</B>
+
+PUSH(Element Type *stack, int top, Element Type value)
+
+• push() is a function used to insert an element into the stack.
+
+• The new element is always inserted at top position.
+
+• <B>STEP 1</B> - Check whether stack is FULL. (top = = SIZE-1 or not)
+
+• <B>STEP 2</B> - If stack is FULL, then display "Stack OVERFLOW!!! Insertion is not possible!!!" and terminate the function.
+
+• <B>STEP 3</B> - If stack is NOT FULL, then increment top value by one (top++) and set stack[top] to value (stack[top] = value).
+
+<b>ALGO:</b>
+
+step - 1 : IF top = Max-1
+Display “ OVERFLOW”
+Go to step-4
+step – 2: top++
+Step – 3: stack[top] = value 
+Step - 4: End
+
+<B>Time Complexity</B> = O(1)
+
+    </pre>
+    <h4 id="9">POP operation</h4>
+    <pre class="data">
+<B>POP:</B>
+
+• pop() is a function used to delete an element from the stack.
+
+• In a stack, the element is always deleted from top position.
+
+• Visiting element from the stack is possible by calling pop().
+
+• <B>STEP 1</B> - Check whether stack is EMPTY. (top = = -1)
+
+• <B>STEP 2</B> - If it is EMPTY, then display “UNDERFLOW! Deletion is not possible!" and terminate the function.
+
+• <B>STEP 3</B> - If it is NOT EMPTY, then delete stack[top] and decrement top value by one (top--).
+
+<B>ALGO: </B>
+step - 1 : IF top = -1
+Display “ UNDERFLOW”
+Go to step-5
+
+step – 2: x = stack[top]
+
+Step – 3: top--
+
+Step – 4: return x
+
+Step - 5: End
+
+<B>Time Complexity</B> = O(1)
+
+    </pre>
+    <h4 id="10">STACK PROGRAM</h4>
+    <pre class="data">
+DONT KNOW
+    </pre>
+    <h4 id="11">Implementation of STACK using Linked Lists</h4>
+    <pre class="data">
+• The other way of implementing the stack is using the Linked List (SLL/ CSLL/ DLL/ CDLL).
+
+• The push operation is the insertion of node into the linked list at the beginning.
+
+• The pop operation is the deletion of node from the beginning (the header/ top node)
+    </pre>
+    <h4 id="12">STACK ADT (Linked List Based (SLL))</h4>
+    <pre class="data">
+// Define node
+typedef struct Node STACK;
+struct Node
+
+{ int data; // Assume we are storing integer data
+    STACK *next;
+}*top = NULL; // Initially stack is empty
+
+// Define the set of operations on stack
+void push(STACK *, int);
+int pop(STACK *);
+void Display(STACK *)
+int Peak(STACK *);
+    </pre>
+    <h4 id="13">Push operation</h4>
+    <pre class="data">
+PUSH(STACK *stack, int top, Element Type value)
+
+• push() is a function used to insert an element into the stack.
+
+• The new element is always inserted at the beginning of the list and is pointed by top (In List it is head / start) .
+
+<B>PROCESS :</B>
+
+• <B>STEP 1</B> - create a new_node. If new_node creation failed, then display "Stack OVERFLOW!!! Insertion is not possible!!!" and terminate the function.
+
+• <B>STEP 2</B> - If stack is NOT FULL, then insert the value and assign NULL to new_node-->next.
+
+• <B>STEP 3</B> – if top == NULL, then assign new_node to top and terminate the function;
+
+• <B>STEP 4</B> – If top != NULL, then assign top to new_node-->next and new_node to top;
+
+<B>Time Complexity</B> = O(1)
+
+    </pre>
+    <h4 id="14">Pop operation</h4>
+    <pre class="data">
+• pop() is a function used to delete an element from the top of the stack.
+
+• The element is always deleted at the beginning of the list and is pointed by top (In List it is head / start) .
+
+<B>PROCESS :</B>
+
+• <B>STEP 1</B> - If top is NULL, then display "Stack UNDERFLOW!!! Deletion is not possible!!!" and terminate the function.
+
+• <B>STEP 2</B> - If stack is NOT EMPTY, then declare a pointer temp and assign top to temp.
+
+• <B>STEP 3</B> – if topnext == NULL, then assign NULL to top, delete the temp and terminate the function;
+
+• <B>STEP 4</B> – If topnext != NULL, then assign top to tempnext and delete temp;
+
+<B>Time Complexity</B> = O(1)
+
+    </pre>
+    <h4 id="15">Parenthesis checking</h4>
+    <pre class="data">
+• {(((([]))))} // Check the parenthesis are balanced or not
+
+• if char is ‘(‘ or ‘{‘ or ‘[‘ then we push it onto the top of stack.
+
+• If char is ‘)’ or ‘}’ or ‘]’ then we perform pop operation and if the popped character is the matches with the starting bracket then fine otherwise parenthesis are not balanced and terminate the task.
+
+• If char is the end of string and if stack is empty, then its is imbalanced
+
+• In other cases, it is said to imbalanced.
+    </pre>
+    <h4 id="16">Notations – infix, prefix and postfix</h4>
+    <pre class="data">
+• Any arthematic expression consists of operators and operands.
+
+• The way we write the arithmetic expression is called notation;
+
+• There are three different notations used to write the athematic expression.
+
+1. Infix Expression
+2. Prefix Expression
+3. Postfix expression
+
+• We can convert the expression in one notation to another notation
+    </pre>
+    <h4 id="17">Infix Notation</h4>
+    <pre class="data">
+• An expression is said to be in infix notation if the operators in the expression are placed in between the operands on which the operator works.
+
+• For example - a + b * c
+
+• In the above example the operator is * is placed between the operands on which this operator works, here b and c.
+
+• Infix expressions are easy for humans to read, write and understand, but it is not the case for computing devices.
+
+• It is costly (in terms of space and time) to process the infix expressions in algorithm
+    </pre>
+    <h4 id="18">Prefix Notation</h4>
+    <pre class="data">
+• An expression is said to be in prefix notation if the operators in the expression are placed before the operands on which the operator works.
+
+• For example - +a*bc
+
+• In the above example the operator is * is placed before the operands on which this operator works, here b and c, similarly the + is placed before a and the result of (b*c). 
+
+• Prefix notation is also called as Polish notation
+    </pre>
+    <h4 id="19">Postfix Notation</h4>
+    <pre class="data">
+• An expression is said to be in prefix notation if the operators in the expression are placed before the operands on which the operator works.
+
+• For example - +a*bc
+
+• In the above example the operator is * is placed before the operands on which this operator works, here b and c, similarly the + is placed before a and the result of (b*c). 
+
+• Prefix notation is also called as Polish notation
+    </pre>
+    <h4 id="20">Evaluation of expressions</h4>
+    <pre class="data">
+• When evaluating the arithmetic expression two things need be considered:
+
+1. <b>The precedence of the operator</b> - If any operand is present in-between two different operators, the precedence (priority) of the one operator over the other decides which operator should use the operand first or which operator to be evaluated first. For example in the arithmetic expression a + b * c the operand b is surrounded by the operators * and +. In computer languages the * enjoying the higher precedence than the +, so * takes b first.
+
+2. <b>The Associativity of the operator</b> - It resolves the ties between the same precedence of operators in the arithmetic expression, by considering the whether the operators are evaluated from left to right or right to left. For example in the expression a* b * c, here b is surrounded by two * operators, So which * should take b first or which multiplication must be done first? It is decided by the associativity of *. So in computer languages * is a left associative, so the first * will be performed first (multiply and b first then the result will
+be multiplied by c).
+    </pre>
+    <h4 id="21">Precedence and Associativity of operators</h4>
+    <pre class="data">
+<img src="6.png" alt="">
+<img src="7.png" alt="">
+    </pre>
+    <h4 id="22">Infix to postfix Conversion</h4>
+    <pre class="data">
+1. Read all the symbols one by one from left to right in the given Infix Expression. 
+
+2. If the reading symbol is operand, then immediately send it to the output.
+
+3. If the reading symbol is left parenthesis '(', then Push it on to the Stack.
+
+4. If the reading symbol is right parenthesis ')', then Pop all the contents of stack until respective left parenthesis is popped and print each popped symbol to the output.
+
+5. If the reading symbol is operator (+ , - , * , / etc.,), then Push it on to the Stack. However, first pop the operators which are already on the stack that have higher or equal precedence than the current operator and output them. If open parenthesis is there on top of the stack then push the operator into stack, even though the precedence of ( is more than any other operator and it is the exceptional case).
+
+6. If the input is over, so pop all the remaining symbols from the stack and output them.
+    </pre>
+    <h4 id="23">Infix to Prefix Conversion</h4>
+    <pre class="data">
+1. Reverse the given infix expression, for example the reverse of the infix expression a + b *c is c * b + a. When reversing the parenthesis ‘)’ will become ‘(‘ and ‘(‘ will become ‘)’ (applicable to all types of brackets)
+
+2. Apply the infix to postfix conversion algorithm on the reversed infix expression. For the above example the resultant postfix expression is: cb*a+
+
+3. Reverse the obtained postfix expression, and is the required prefix expression for the given infix expression. for thae above example, the infix expression is +a*bc
+    </pre>
+    <h4 id="24">Prefix to Infix Conversion</h4>
+    <pre class="data">
+1. Reverse the given prefix expression, for example the reverse of the prefix expression *cd is dc*
+
+2. Read the character by character of the reversed infix expression and repeat the step 3 and 4 till there are no characters in the reversed prefix expression .
+
+3. If the character read is an operand then push the operand into the stack. (push d and c)
+
+4. If the character read is an operator, op, then pop the top two symbols from the stack, the first one is p1, and the second one is p2. Push the concatenated string p1 op p2 to stack.(push c *d )
+
+5. Now the value in the stack is the required infix expression. (c*d)
+    </pre>
+    <h4 id="25">Prefix to Postfix Conversion</h4>
+    <pre class="data">
+1. Reverse the given prefix expression, for example the reverse of the prefix expression *cd is cd*.
+
+2. Read the character by character of the reversed infix expression and repeat the step 3 and 4 till there are no characters in the reversed prefix expression .
+
+3. If the character read is an operand then push the operand into the stack. (push d and c)
+
+4. If the character read is an operator, op, then pop the top two symbols from the stack, the first one is p1, and the second one is p2. Push the concatenated string p1 p2 op to stack.(push c d * )
+
+5. Now the value in the stack is the required infix expression. (c d *)
+    </pre>
+    <h4 id="26">Postfix to Infix Conversion</h4>
+    <pre class="data">
+1. Read the character by character of the given postfix expression and repeat the step 3 and 4 till there are no characters in the postfix expression. For example assume the postfix expression ab+;
+
+2. If the character read is an operand then push the operand into the stack. (push a and b)
+
+3. If the character read is an operator, op, then pop the top two symbols from the stack, the first one is p1, and the second one is p2. Push the concatenated string p2 op p1 to stack.(push a * b )
+
+4. Now the value in the stack is the required infix expression. (a * b
+    </pre>
+    <h4 id="27">Postfix to Prefix Conversion</h4>
+    <pre class="data">
+1. Read the character by character of the given postfix expression and repeat the step 2 and 3 till there are no characters in the postfix expression. For example assume the postfix expression ab+;
+
+2. If the character read is an operand then push the operand into the stack. (push a and b)
+
+3. If the character read is an operator, op, then pop the top two symbols from the stack, the first one is p1, and the second one is p2. Push the concatenated string op p2 p1 to stack. (push a * b )
+
+4. Now the value in the stack is the required postfix expression. (*a b
+    </pre>
+    <h4 id="28">TABLE OF CONVERSIONS</h4>
+    <pre class="data">
+<img src="8.png" alt="">
+    </pre>
+    <a href="#top">BACK TO TOP</a>
+</body>
+</html>

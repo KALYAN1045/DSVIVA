@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARRAYS</title>
+    <style>
+        .data{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, sans-serif;
+            font-size:20px;
+        }
+        .mainhed{
+                font-size:20px;
+                text-decoration:none;
+                color:red;
+                font-family:fantasy;
+            }
+            .subhed{
+                color: black;
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+            }
+            body{
+                background-repeat: no-repeat ;
+                background-color: 
+/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#f9e886+35,68d6c0+69,68d6c0+72 */
+background: rgb(249,232,134); /* Old browsers */
+background: -moz-linear-gradient(left,  rgba(249,232,134,1) 35%, rgba(104,214,192,1) 69%, rgba(104,214,192,1) 72%); /* FF3.6-15 */
+background: -webkit-linear-gradient(left,  rgba(249,232,134,1) 35%,rgba(104,214,192,1) 69%,rgba(104,214,192,1) 72%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to right,  rgba(249,232,134,1) 35%,rgba(104,214,192,1) 69%,rgba(104,214,192,1) 72%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f9e886', endColorstr='#68d6c0',GradientType=1 ); /* IE6-9 */
+
+
+            }
+            h4{
+                font-size:20px;
+                color:red;
+                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                text-transform: capitalize;
+            }
+            a{
+                text-decoration: none;
+            }
+            ::selection{
+                color: black;
+                background: lightslategray;
+            }
+    </style>
+</head>
+<body>
+    <h1 id="top"><a href="HOME.html">HOME PAGE</a></h1>
+    <h1>ARRAYS</h1>
+    <ul type=disc>
+        <li class="subhed"><a href="#A">ARRAYS</a></li>
+        <li class="subhed"><a href="#WDWUA">WHY DO WE USE ARRAYS?</a></li>
+        <li class="subhed"><a href="#LILA">Limitations of arrays</a></li>
+        <li class="subhed"><a href="#1DAD">1-D Array Declaration</a></li>
+        <li class="subhed"><a href="#HTAI">How to access individual elements of the Array?</a></li>
+        <li class="subhed"><a href="#AI">Array Initialization</a></li>
+        <li class="subhed"><a href="#CMA">Contiguous Memory Allocation</a></li>
+        <li class="subhed"><a href="#AEM">Array Element Manipulations</a></li>
+        <li class="subhed"><a href="#2DAD">2-D Array Declaration</a></li>
+        <li class="subhed"><a href="#HTAI2D">How to access individual elements of the 2-D Array?</a></li>
+        <li class="subhed"><a href="#HTI2DE">How to initialize 2-D elements ?</a></li>
+        <li class="subhed"><a href="#AFDI">Algorithm for Displaying Integer Array elements in reverse order</a></li>
+        <li class="subhed"><a href="#AFCT">Algorithm for converting the given decimal number into binary</a></li>
+        <li class="subhed"><a href="#CODTB">Computation of decimal to binary</a></li>
+        <li class="subhed"><a href="#MOTSL">Merging of two sorted lists</a></li>
+        <li class="subhed"><a href="#RMO">Row major order</a></li>
+        <li class="subhed"><a href="#CMO">Column major order</a></li>
+        <li class="subhed"><a href="#AC1D">Address calculation in 1-D</a></li>
+        <li class="subhed"><a href="#AC2D">Address calculation in 2-D</a></li>
+        <li class="subhed"><a href="#AC3D">Address calculation in 3-D</a></li>
+        <li class="subhed"><a href="#DMA">Dynamic Memory Allocation</a></li>
+        <li class="subhed"><a href="#SMDM">Sparse Matrix & Dense Matrix</a></li>
+        <li class="subhed"><a href="#TR">Triplet Representation</a></li>
+    </ul>
+    <h4 id="A">ARRAYS</h4>
+    <pre class="data">• Array is a structure which fulfils these requirements – It is a collection of homogeneous (of same data type) data items stored in consecutive memory locations and addressed by a common identifier.
+
+<B>EX :</B> int marks [80].
+
+Here 
+- int is a data type
+- marks is an identifier name
+- 80 is the size of the array (it must be integer constant ).
+
+• There are two variations in arrays – One dimensional arrays (1-D) and multidimensional arrays.
+
+1-D ARRAY - 1-D arrays store one row of elements(store marks of a student in n subjects) and multidimensional arrays store two or more rows of elements (store n students marks in m subjects, each row store one student marks).
+
+2-D ARRAY - 2-D (multidimensional) array 
+
+<B>EX :</B> int marks [2][3]. // 2-D declaration
+
+Here - 
+- int is a data type
+- marks is an identifier name
+- 2 is the number of rows and 3 is the number of elements in each row.
+
+
+    </pre>
+    <h4 id="WDWUA">WHY DO WE USE ARRAYS</h4>
+    <pre class="data">• Consider the following situations:
+
+• To store the marks secured by students of a class in a particular subject. Ex: 72, 85, 67, 59, 88, 0, 50, …
+
+• To store the marks of students in all the subjects of a semester.
+
+• To store the names of the patients in a hospital management system.
+
+• To store the distances from a location to another locations.
+
+• In all the above situations, we need a structure to store all these similar values under the same name.
+        
+    </pre>
+    <h4 id="LILA">Limitations of arrays</h4>
+    <pre class="data"><b>Limitations of arrays -</b>
+
+• Fixed size – The size of the array is static, so wastage of memory. 
+
+• One block allocation – Not always possible. • Complex position based insertion/deletion – To insert an element we need to shift the existing
+
+    </pre>
+    <h4 id="1DAD">1-D ARRAY DECLARATION</h4>
+    <pre class="data">Arrays can be declared by specifying the size or the number of array elements. The size of the array specifies the maximum number of elements that the array can hold.
+
+<B>EX:</B>
+
+// array of 10 uninitialized integers 
+
+• int myList[10]; // an array myLIST of size 10
+
+• By the above declaration, myList has no values initialized for its elements.
+
+• Such an array contains garbage values initially.
+
+• It creates contiguous memory locations.
+        
+    </pre>
+    <h4 id="HTAI">HOW TO ACCESS INDIVIDUAL ELEMENTS OF THE ARRAY</h4>
+    <pre class="data">
+• Each data items or element of the array can be referred using a subscript or an  index to its relative position.
+
+• Note – In C the index of the array always goes from 0 to n - 1, where the size of the array is n.
+
+• <b>EX:</b> a declaration marks[10] identifies the elements marks[0], marks[1], .... , marks[9].
+
+Note: With the declaration marks [10], there is no data elements which can be referred to as marks[10].
+
+<b>EX </b> – marks [5] refers to the 6th element of the array marks.
+
+        
+    </pre>
+    <h4 id=CAI">1-D ARRAY INITIALIZATION</h4>
+    <pre class="data">• Initialization can be done in several ways.
+
+• Consider the following declaration 
+
+int a[4]; // an integer array of size 4.
+
+• Both declaration and initialization in single step.
+  Ex. int a[4] = {1, 2, 3, 4};
+
+• Or by accessing a particular location
+  Ex. a[0] = 1; a[1] = 2; a[2] = 3; a[3] = 4;
+
+• Or by the user
+  Ex. scanf(“%d”, &a[index]); ; // where index is a value in {0,1,2,3}.
+
+        
+    </pre>
+    <h4 id="CMA">CONTIGUOUS MEMORY ALLOCATION</h4>
+    <pre class="data">In Contiguous memory allocation which is a memory management technique, whenever there is a request by the user process for the memory then a single section of the contiguous memory block is given to that process according to its requirement.
+        
+    EX: • int a, b, c; // Memory allocation is not contiguous
+    • int marks[10]; // always it is contiguous memory allocation
+        
+    </pre>
+    <h4 id="AEM">ARRAY ELEMENT MANIPULATIONS</h4>
+    <pre class="data">Manipulating array elements in C Language An element is accessed by indexing the array name. This is done by placing the index of the element within square brackets after the name of the array.
+    
+• Consider
+
+int a[10], i = 7, j = 2, k = 4;
+a[0] = 1;
+a[i] = 5;
+a[j] = a[i] + 3;
+a[j+1] = a[i] + a[0];
+a[a[j]] = 12;
+scanf(“%d”, &a[k]);// where the next input value is 3
+        
+    </pre>
+    <h4 id="2DAD">2-D ARRAY DECLARATION</h4>
+    <pre class="data">Declaration of two dimensional Array in C. The syntax to declare the 2D array is given below. 
+data_type array_name [rows] [columns];
+
+Consider the following example. int twodimen [4] [3]; 
+ 
+Here, 4 is the number of rows, and 3 is the number of columns.
+        
+    </pre>
+    <h4 id="HTAI2D">HOW TO ACCESS INDIVIDUAL ELEMENTS OF 2-D ARRAY</h4>
+    <pre class="data">• Elements in Two-Dimensional arrays are accessed using the row indexes and column indexes. 
+
+• <b>Example:</b> 
+
+a = x[2][1]; // Access the element present in third row and second column.
+        
+    </pre>
+    <h4 id="HTI2DE">HOW TO INITIALIZE 2-D ELEMENTS</h4>
+    <pre class="data">
+• Initialization can be done in several ways.
+
+• Consider a declaration 
+int a[2][2]; // an integer array of size 2 X 2.
+
+• Both declaration and initialization in single step.
+int a[2][2] = {1, 2, 3, 4};
+int a[2][2] = {{1, 2}, { 3, 4}};
+int a[][2] = {{1, 2}, { 3, 4}};
+int a[][2] = {1, 2, 3, 4};
+
+• Or by accessing a particular location
+Ex. a[0][0] = 1; a[0][1] = 2; a[1][0] = 3; a[1][1] = 4;
+
+• Or by the user
+Ex. scanf(“%d”, &a[i][j]); ; // where i is 0 or 1 and j is 0 or 1.
+
+        
+    </pre>
+    <h4 id="AFDI">ALGORITHM FOR DISPLAYING INTEGER ARRAY ELEMENTS IN REVERSE ORDER</h4>
+    <pre class="data">
+• <b>Algorithm:</b>
+
+    int a[10] ;                   // declare an array of size 10
+• Starting with i from 1 to n // read the values into a
+    -->Read the number into a[i]
+• Starting with i from n to 1 // output the values into a
+    -->Output a[i]
+        
+    </pre>
+    <h4 id="AFCT">ALGORITHM FOR CONVERTING THE GIVEN DECIMAL NUMBER INTO BINARY</h4>
+    <pre class="data">
+<b>Algorithm -</b>
+
+• int b[10] ; // first declare array a of size 10 to store the digits of binary number 
+• Input n // read the decimal number
+• Let m = n, i = 1;
+• while n is greater than or equal to 0 
+b[i] = n % 2; 
+i = i + 1 ; n = n/2;
+// Display the remainders in reverse order. Why ?
+• i = i – 1;
+• while i is greater than or equal to 1
+• output a[i]; i = i – 1;
+
+        
+    </pre>
+    <h4 id="CODTB">COMPUTATION OF DECIMAL TO BINARY</h4>
+    <pre class="data">
+-->Divide the given decimal number by “2” where it gives the result along with the remainder.
+
+-->If the given decimal number is even, then the result will be whole and it gives the remainder “0”
+
+-->If the given decimal number is odd, then the result is not divided properly and it gives the remainder “1”.
+
+-->By placing all the remainders in order in such a way, the Least Significant Bit (LSB) at the top and Most Significant Bit (MSB) at the bottom, the required binary 
+    </pre>
+    <h4 id="MOTSL">MERGING OF TWO SORTED LISTS</h4>
+    <pre class="data">
+Consider two sorted lists a[] and b[] containing m and n elements in ascending order respectively.
+
+To merge the two lists into another list c[] in ascending order:
+
+<b>Constraints:</b>
+
+• It is not known whether m < n or m =n or m > n.
+• There could be some duplicate elements in a[] or b[] or by considering both.
+
+<b>Process:</b>
+
+In each of the m+n steps, compare one element of a[] and one element of b[] and copy smaller one into c[].
+
+<b>ALGORITHM:</b>
+
+Let a[], b[] contain m and n sorted integers.
+
+Initialize i, j, k, (indices of a, b and c) to 0.
+
+while i < m && j < n        // both lists are non-empty
+
+if a[i] < b[j], copy a[i] to c[k], increment i and k, else copy b[j] to c[k], increment j and k
+
+// b is exhausted. Remaining Elements of a[] are to be copied.
+
+while i < m 
+
+Copy a[i] to c[k], increment i and k.
+
+// b is exhausted. Remaining Elements of a[] are to be copied.
+
+while j < n 
+
+Copy b[j] to c[k], increment j and k.
+        
+    </pre>
+    <h4 id="RMO">ROW MAJOR ORDER</h4>
+    <pre class="data">In computing, row-major order and column-major order describe methods for storing multidimensional arrays in linear memory.
+
+<b>Row-major order:</b>
+
+• In row-major storage, a multidimensional array in linear memory is accessed such that rows are stored one after the other.
+
+• It is the approach used by the C programming language as well as many other languages, with the notable exceptions of Fortran and MATLAB.
+
+• When using row-major order, the difference between addresses of array cells in increasing rows is larger than addresses of cells in increasing columns.
+
+<b>EX:</b> int A[3][4] = { {8,6,5,4}, {2,1,9,7}, {3, 6, 4, 2}};
+
+We would find the array laid-out in linear memory as: 8 6 5 | 4 2 1 | 9 7 3 | 6 4 2
+
+
+        
+    </pre>
+    <h4 id="CMO">COLOUMN MAJOR ORDER</h4>
+    <pre class="data">In computing, row-major order and column-major order describe methods for storing multidimensional arrays in linear memory.
+
+Column-major order is a similar method of flattening arrays onto linear memory, but the columns are listed in sequence.
+
+<b>EX:</b> consider this 3×4 array:
+
+int A[3][4] = {{8, 6, 5, 4}, {2, 1, 9, 7}, {3, 6, 4, 2}};
+
+We would find the array laid-out in linear memory as: 8 2 3 | 6 1 6 | 5 9 4 | 4 7 2.
+
+        
+    </pre>
+    <h4 id="AC1D">ADDRESS CALCULATION IN 1-D</h4>
+    <pre class="data">
+• The address calculation of 1-D array is calculated in the following manner:
+• Address of A [ K ] = B + W * ( K – LB) // LB = 0
+
+Where,
+• B = Base address
+• W = Storage size of one element stored in the array (in byte)
+• K = Subscript of element whose address is to be found.
+• LB = Lower limit / Lower Bound of subscript, if not specified assume 0 (zero)
+        
+    </pre>
+    <h4 id="AC2D">ADDRESS CALCULATION IN 2-D</h4>
+    <pre class="data">
+• In row major skip the i-Lr rows and move to the j-Lc position
+
+• <b>In row-major: a[i][j</b>] = (B + W * (n * (i -Lr) + j - Lc) )
+
+• <b>In Column-major a[i][j]</b> = (B + W * (m * (j - Lc) + i - Lr))
+
+Where,
+• B = base address
+• W = storage size of one element stored in the array (in byte).
+• i and j are the row subscript and column subscript of the element whose address is to be found.
+• m is the number of rows and n is the number of columns.
+• Lr is the start row index of matrix
+• Lc is the start column index of matrix
+        
+    </pre>
+    <h4 id="AC3D">ADDRESS CALCULATION IN 3-D</h4>
+    <pre class="data">
+• To find the address of a[i][j][k] in row major 3-D array (for example consider the array a[p][m][n])
+
+• Skip the i-Lr blocks
+• In ith block skip j-Lc rows
+• In jth row of ith block move to k-Lk position
+
+• <b>In row-major:</b> a[i][j][k] = (B + W * (i * m * n + (n * (j - Lr)) + k - Lc) )
+
+Where,
+• B = base address
+• W = storage size of one element stored in the array (in byte).
+• j and k are the row subscript and column subscript of the element whose address is to be found.
+• m is the number of rows, n is the number of columns and p is the number of such [m][n] 2-D arrays.
+• Lr is the start row index of matrix
+• Lc is the start column index of matrix
+
+ 
+    </pre>
+    <h4 id="DMA">DYNAMIC MEMORY ALLOCATION</h4>
+    <pre class="data">• Dynamic Memory Allocation can be defined as a procedure in which the size of a data structure (like Array) is changed during the runtime.
+
+• In C programming this can be achieved using the following functions:
+
+<b>malloc()</b> - “malloc” or “memory allocation” method in C is used to dynamically allocate a single large block of memory with the specified size.
+
+It returns a pointer of type void which can be cast into a pointer of any form.
+
+It initializes each block with default garbage value.
+
+Syntax :  p = (cast- type *) malloc (size)
+
+<b>calloc()</b> - “calloc” or “contiguous allocation” method in C is used to dynamically allocate the specified number of blocks of memory of the specified type.
+
+It initializes each block with a default value ‘0’.
+
+Syntax : p = (cast- type *) calloc (n, size of element).
+
+<b>realloc()</b> - “realloc” or “re-allocation” method in C is used to dynamically change the memory allocation of a previously allocated memory.
+
+• In other words, if the memory previously allocated with the help of malloc or calloc is insufficient, realloc can be used to dynamically re-allocate memory.
+
+• Re-allocation of memory maintains the already present value and new blocks will be initialized with default garbage value.
+
+SYNTAX : p = realloc(p, new-size);
+
+<b>free()</b> - “free” method in C is used to dynamically de-allocate the memory.
+
+• The memory allocated using functions malloc() and calloc() is not de-allocated on their own.
+
+• Hence the free() method is used, whenever the dynamic memory allocation takes place. It helps to reduce wastage of memory by freeing it.
+
+Syntax : free(p);
+        
+    </pre>
+    <h4 id="SMDM">SPARSE MARTRIX AND DENSE MATRIX</h4>
+    <pre class="data"><b>SPARSE MATRIX :</b> There may be a situation in which a matrix contains more number of ZERO values than NON-ZERO values. Such matrix is known as sparse matrix otherwise it is dense matrix.
+
+• When a sparse matrix is represented with a 2-dimensional array, we waste a lot of space to represent that matrix.
+
+• For example, consider a matrix of size 100 X 100 containing only 10 non-zero elements.
+
+• <b>Sparse Matrix Representations –</b> To save the storage and to access the elements efficiently we use the following TWO representations:
+
+1. Triplet Representation (Array Representation)
+2. Linked Representation
+
+<b>DENSE MATRIX : </b>Dense arrays are the most well known type of Array. They are the "normal" arrays most are familiar with. 
+
+A dense array is an array where the elements are all sequential starting at index 0. 
+
+In this instance, the length property of an array accurately specifies the number of elements in the array.
+
+        
+    </pre>
+    <h4 id="TR">TRIPLET REPRESENTATION</h4>
+    <pre class="data">Triplet Representation (Array Representation) In this representation, we consider only non-zero values along with their row and column index values. 
+        
+In this representation, the 0 th row stores the total number of rows, total number of columns and the total number of non-zero values in the sparse matrix.
+        
+    </pre>
+    <a href="#top">BACK TO TOP</a>
+
+</body>
+</html>

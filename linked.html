@@ -1,0 +1,1206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LINKED LISTS</title>
+    <style>
+        .data{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, sans-serif;
+            font-size:20px;
+        }
+        .mainhed{
+                font-size:20px;
+                text-decoration:none;
+                color:red;
+                font-family:fantasy;
+            }
+            .subhed{
+                color: black;
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+            }
+            body{
+                background-repeat: no-repeat ;
+                background-color: 
+/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#f9e886+35,68d6c0+69,68d6c0+72 */
+background: rgb(249,232,134); /* Old browsers */
+background: -moz-linear-gradient(left,  rgba(249,232,134,1) 35%, rgba(104,214,192,1) 69%, rgba(104,214,192,1) 72%); /* FF3.6-15 */
+background: -webkit-linear-gradient(left,  rgba(249,232,134,1) 35%,rgba(104,214,192,1) 69%,rgba(104,214,192,1) 72%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to right,  rgba(249,232,134,1) 35%,rgba(104,214,192,1) 69%,rgba(104,214,192,1) 72%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f9e886', endColorstr='#68d6c0',GradientType=1 ); /* IE6-9 */
+
+
+            }
+            h4{
+                font-size:20px;
+                color:red;
+                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                text-transform: capitalize;
+            }
+            a{
+                text-decoration: none;
+            }
+            ::selection{
+                color: black;
+                background: lightslategray;
+            }
+    </style>
+</head>
+<body>
+    <h1 id="top"><a href="HOME.html">HOME PAGE</a></h1>
+    <h1>LINKED LISTS</h1>
+    <ul type=disc>
+                <li class="subhed"><a href="#1">Linked list</a></li>
+                <li class="subhed"><a href="#2">Node creation</a></li>
+                <li class="subhed"><a href="#3">Types of Linked List</a></li>
+                <li class="subhed"><a href="#4">Operations of Linked List</a></li>
+                <li class="subhed"><a href="#5">Singly Linked List</a></li>
+                <li class="subhed"><a href="#6">singly linked list abstract data type(SLL ADT)</a></li>
+                <li class="subhed"><a href="#7">SLL Insert End() node creation and algo</a></li>
+                <li class="subhed"><a href="#8">SLL Insert End() LOGIC</a></li>
+                <li class="subhed"><a href="#TC">TIME COMPLEXITY IN SLL</a></li>
+                <li class="subhed"><a href="#9">SLL Insert Beginning()</a></li>
+                <li class="subhed"><a href="#10">SLL Insert Begin (Logic)</a></li>
+                <li class="subhed"><a href="#11">SLL Insert after a given node (After ele)</a></li>
+                <li class="subhed"><a href="#12">SLL Insert after a specific data element (Logic)</a></li>
+                <li class="subhed"><a href="#13">SLL Display/Traversing</a></li>
+                <li class="subhed"><a href="#14">SLL Displaying (Logic)</a></li>
+                <li class="subhed"><a href="#15">SLL Search</a></li>
+                <li class="subhed"><a href="#16">SLL Delete (From the beginning)</a></li>
+                <li class="subhed"><a href="#17">SLL Delete a node from the end of the list</a></li>
+                <li class="subhed"><a href="#18">SLL Delete a specific node</a></li>
+                <li class="subhed"><a href="#20">Circular Singly Linked List</a></li>
+                <li class="subhed"><a href="#21">Circular Singly Linked List abstract data type(CSLL ADT)</a></li>
+                <li class="subhed"><a href="#22">CSLL – Insert_End() node creation and algo</a></li>
+                <li class="subhed"><a href="#23">CSLL Insert_End (Logic)</a></li>
+                <li class="subhed"><a href="#24">CSLL Insert at the beginning</a></li>
+                <li class="subhed"><a href="#25">CSLL Insert after a given node (After ele)</a></li>
+                <li class="subhed"><a href="#26">CSLL Delete a node from the beginning</a></li>
+                <li class="subhed"><a href="#27">CSLL  Delete a node from the end of the list</a></li>
+                <li class="subhed"><a href="#28">CSLL Delete a specific node</a></li>
+                <li class="subhed"><a href="#29">CSLL Delete a node after a specific element</a></li>
+                <li class="subhed"><a href="#30">CSLL Display/Traversing</a></li>
+                <li class="subhed"><a href="#31">Doubly Linked List</a></li>
+                <li class="subhed"><a href="#32">DLL – Insert_End node creation and algo</a></li>
+                <li class="subhed"><a href="#33">DLL - Insert at beginning</a></li>
+                <li class="subhed"><a href="#34">DLL - Insert after a specific location</a></li>
+                <li class="subhed"><a href="#35">DLL - Insert before a specific location</a></li>
+                <li class="subhed"><a href="#36">DLL Delete a node from the beginning of the list</a></li>
+                <li class="subhed"><a href="#37">DLL Delete a node from the end of the list</a></li>
+                <li class="subhed"><a href="#38">DLL Delete a node after a specific node in the list</a></li>
+                <li class="subhed"><a href="#39">DLL Delete a specific node in the list</a></li>
+                <li class="subhed"><a href="#40">DLL Display</a></li>
+                <li class="subhed"><a href="#41">Circular Doubly Linked List</a></li>
+                <li class="subhed"><a href="#42">CDLL – Insert_End() node creation and algo</a></li>
+                <li class="subhed"><a href="#43">CDLL - Insert at beginning</a></li>
+                <li class="subhed"><a href="#44">CDLL - Insert after a specific location</a></li>
+                <li class="subhed"><a href="#45">CDLL - Insert before a specific location</a></li>
+                <li class="subhed"><a href="#46">CDLL Delete a node from the beginning of the list</a></li>
+                <li class="subhed"><a href="#47">CDLL Delete a node from the end of the list</a></li>
+                <li class="subhed"><a href="#48">CDLL Delete a node after a specific node in the list</a></li>
+                <li class="subhed"><a href="#49">CDLL Display</a></li>
+                <li class="subhed"><a href="#50">Complexity Analysis</a></li>
+    </ul>
+    <h4 id="1">Linked list</h4>
+    <pre class="data"><b>Linked list - </b> A linked list is a collection of data elements called nodes in which the linear 
+representation is given by links from one node to the next node. 
+
+• Each node contains:
+
+• Data will store the information part
+• Next will store the address of the next node.
+    </pre>
+    <h4 id="2">Node creation</h4>
+    <pre class="data">-->Create the new Data Structure
+struct Node
+{ int data;
+struct Node *next;}
+
+-->At first node will be created
+
+-->struct Node *n2;
+
+-->Dynamic Memory Allocation
+
+-->Then update the <Next> of the new node;
+
+-->Insert the data in the new node
+    </pre>
+    <h4 id="3">Types of Linked List</h4>
+    <pre class="data">THERE ARE 4 TYPES:
+
+1. <B>Singly Linked List</B> - A singly linked list is the simplest type of linked list in which every node contains some data and pointer to the next node of the same data type.
+
+2. <B>Circular Singly Linked List</B> - A Singly linked list where the last node contains a pointer to the first node of the list. 
+
+3. <b>Doubly Linked List</b> - Two-way linked list which contains a pointer to the next as well as the previous node in the sequence. 
+
+• prev pointer-points to the address of previous Node
+• next-pointer points to the address of the next node
+
+4. <b>Circular Doubly Linked List</b> -A doubly linked list where the first node (prev pointer) is connected to the last node and the last
+node (next pointer) will connect to the first node.
+    </pre>
+    <h4 id="4">Operations of Linked List</h4>
+    <pre class="data">
+• Create
+
+• <b>Insert:</b>
+• Insert at the beginning
+• Insert at the end
+• Insert before a given node
+• Insert after a given node
+
+• <b>Delete:</b>
+• Delete a node from beginning
+• Delete a node from the end
+• Delete a given node
+• Delete after a given node
+
+• Display/Traversing
+
+• Sort
+    </pre>
+    <h4 id="5">Singly Linked List</h4>
+    <pre class="data">
+• A singly linked list is list of elements, where each element consists of data and next pointer as values. 
+
+• These Elements are connected through a link(address)
+    </pre>
+    <h4 id="6">singly linked list abstract data type(SLL ADT)</h4>
+    <pre class="data">
+// Define the structure of node
+typedef struct Node SLL; 
+struct Node
+{ ElementType Element;
+struct Node *next;
+};
+
+// Define the set of operations
+void Insert_End(SLL *h, ElementType); 
+void Insert_Before_X(SLL *h, ElementType, ElementType);
+void Insert_After_X(SLL *h, ElementType, ElementType);
+ElementType Delete_X(SLL *, ElementType);
+ElementType Delete_Begin(SLL *);
+ElementType Delete_End(SLL *);
+void Traverse(SLL *);
+void Search(SLL *, Element Type);
+    </pre>
+    <h4 id="7">SLL Insert End() node creation and algo</h4>
+    <pre class="data"><b>NODE CREATION:</b>
+
+Initially the node structure will be defined and header node will be created.
+
+typedef struct Node SLL;
+struct Node
+{int data;
+SLL *next;
+}*head = NULL;
+
+<b>ALGORITHM:</b>
+
+Insert_End(SLL *head, int x)
+
+Input: New data element x, The list h;
+Output: A new node with data x is added to the end of the list h; 
+
+• Step 1 - Create a new_node with given value x and make new_node → next as NULL. 
+
+• Step 2 - Check whether list is Empty (head == NULL). 
+
+• Step 3 - If list is Empty then, set head = new_node. 
+
+• Step 4 - If list is Not Empty then
+
+• Step 4.1 - Declare a node pointer temp and initialize with head. 
+
+• Step 4.2 - Keep moving the temp to its next node until it reaches to the last node in the list (until temp → next is equal to NULL). 
+
+• Step 4.3 - Set temp → next = new_node. 
+
+• Step 5 – STOP.
+    </pre>
+    <h4 id="8">SLL Insert End() LOGIC</h4>
+    <pre class="data">
+Insert_End(ele, head) // ele is the element to be added, head is the SLL header
+
+<b>//new node creation</b> 
+
+• struct Node *new_node, *t; 
+• new_node = (struct Node *) malloc(sizeof(struct Node *)); 
+
+<b>• if (new_node == NULL) then, print (“NO memory”) exit(0);</b>
+
+<b>//new node assignment </b>
+
+• new_node->data = x; 
+• new_node->next=NULL;
+
+<b>// if list is empty then make new_node as first node</b>
+
+• if( head==NULL) 
+• head=new_node;
+
+<b>// if list is not empty, then reach the last node and then add the address of new_node in last node next </b>
+
+• else
+• t=head;
+
+<b>//move to the end of list </b>
+• while(t->next!=NULL) 
+• t=t->next;
+
+<b>//adding node at the end</b>
+• t->next=new_node;
+    </pre>
+    <h4 id="TC">TIME COMPLEXITY FOR SLL</h4>
+    <pre class="data"><b>TIME COMPLEXITY FOR SLL:</b>
+
+Ɵ(n) // n is the number of nodes in the list 
+
+Time Complexity = Ɵ (1) + Ɵ (1) + Ɵ (1) + Ɵ (n)  = Ɵ (n)
+
+    </pre>
+    <h4 id="9">SLL Insert Beginning()</h4>
+    <pre class="data">
+•Step 1
+•Create a new_node with a given value and
+new_node → next as NULL. 
+
+•Step 2
+• Check whether list is Empty (head == NULL). 
+
+•Step 3
+• If it is Empty then, set head = new_node. 
+
+•Step 4
+• If it is Not Empty then, 
+• Set new_node → next = head. 
+• Set head=new_node;
+    </pre>
+    <h4 id="10">SLL Insert Begin (Logic)</h4>
+    <pre class="data">
+Insert_Begin(ele, head) // ele is the element to add and head is the LL header 
+
+• <b>//new node creation</b> 
+• Struct Node *new_node, *t; 
+• new_node=(struct Node *) malloc(sizeof(struct Node *)); 
+
+• <b>if (new_node == NULL) then, print (“NO memory”) exit(0); </b>
+• <b>//new node assignment </b>
+• new_node-->data=ele; 
+• new_node-->next=NULL; 
+
+• <b>// check if list is empty then make new_node as first node</b>
+
+• if( head==NULL) 
+• head=new_node; 
+
+• else <b>// if list is not empty, then update the new_node next and update head</b>
+
+• new_node-->next=head; 
+• head=new_node
+    </pre>
+    <h4 id="11">SLL Insert after a given node (After ele)</h4>
+    <pre class="data">
+<b>•Step 1</b>
+
+•Create a new_node with given value
+and new_node → next as NULL. 
+
+<b>•Step 2</b>
+
+•Check whether list is Empty (head == NULL). 
+
+<b>•Step 3</b>
+
+• If list is Empty then, print “Insertion is not
+possible”, return; 
+
+<b>•Step 4</b>
+
+• If list is Not Empty then, (move to the desired
+node) define a node pointer temp and initialize
+with head. 
+
+<b>•Step 5</b>
+
+•Keep moving the temp to its next node until it
+reaches to the desired node in the list (until temp → data is not equal to ele and temp != NULL). 
+
+<b>•Step 6 </b>
+
+•If(temp != NULL) 
+•Set new_node → next = temp →next; 
+•Set temp →next=new_node;
+
+<b>• Step 7</b>
+
+•else if(temp == NULL) 
+•If it doesn’t math with any node, then display error message “element not found”.
+    </pre>
+    <h4 id="12">SLL Insert after a specific data element (Logic)</h4>
+    <pre class="data">
+• Insert(ele, aele, head) 
+<b>• // ele-to insert, aele-after element, head is the LL header</b>
+<b>• //create a new node </b>
+• Struct Node *new_node, *t; 
+• new_node=(struct Node *) malloc(sizeof(struct Node *)); 
+• if (new_node == NULL) then, print (“NO memory”) exit(0); 
+<b>• // Assign data to new_node and update the address pointer </b>
+• new_node-->data=ele; 
+• new_node-->next=NULL; 
+<b>• // if list is empty, assign new_node address in head</b>
+• if( head==NULL) 
+• print(“ Insertion not possible”);
+<b>• // if list is not empty, then mover the desired location</b>
+• else
+• temp=head; 
+• while(temp-->data!=aele && temp!= NULL) 
+                      • temp=temp-->next; 
+• If(temp != NULL) 
+                      • //changing new_node next value
+                      • new-->next=temp-->next; 
+                      • // changing temp->next to new_node
+                      • temp-->next=new_node; 
+• else print(“Element Not Found)
+
+<b>Time Complexity</b> = Ɵ (1) + Ɵ (1) + Ɵ (1) + Ɵ (n) 
+= Ɵ (n)
+
+    </pre>
+    <h4 id="13">SLL Display/Traversing</h4>
+    <pre class="data">
+It Is a process of visiting each node and displaying the data in it.
+
+<b>•Step 1</b>
+
+•Check whether list is Empty (head == NULL) 
+
+<b>•Step 2</b>
+
+•If it is Empty then, display 'List is Empty!!!' and
+terminate the function. 
+
+<b>•Step 3</b>
+
+•If it is Not Empty then, define a Node pointer 'temp' and
+initialize with head. 
+
+<b>•Step 4</b>
+
+Keep displaying temp → data until temp reaches to the
+last node.
+
+<b>Time Complexity</b> = Ɵ (1) + Ɵ (1) + Ɵ (1) + Ɵ (n)  = Ɵ (n)
+    </pre>
+    <h4 id="14">SLL Displaying (Logic)</h4>
+    <pre class="data">Display(head) // head is the LL header 
+<B>• //create temp node </B>
+• Struct Node *temp = head; 
+• // check if list is empty then print empty message
+
+<B>• if( temp ==NULL)</B> 
+• printf(“ List is Empty !!!!”); 
+• else // print the data in all the nodes
+
+<B>• while(temp != NULL) </B>
+• printf(“%d “, temp-->data); 
+• temp = temp-->next;
+
+<B>Time Complexity</B> = Ɵ(1) + Ɵ(1) + Ɵ(n) = Ɵ(n) 
+
+    </pre>
+    <h4 id="15">SLL Search</h4>
+    <pre class="data">It is a process of searching for an element in the list.
+
+<B>•Step 1</B>
+
+•Check whether list is Empty (head == NULL) 
+
+<B>•Step 2</B>
+
+•If list is Empty then, display 'List is Empty!!!' and terminate the function. 
+
+<B>•Step 3</B>
+
+•If list is Not Empty then, define a Node pointer 'temp' and initialize with head. 
+
+<B>•Step 4</B>
+
+•Keep traversing to each node and compare the data element in each node with ele, if match display “Element Found” and terminate the function. 
+
+<B>•Step 5</B>
+
+•If not terminated the function in step4, display “Element
+not Found” and terminate the function.
+
+<B>TIME COMPLEXITY :</B>Ɵ (1) + Ɵ (1) + Ɵ (1) + Ɵ (n) + Ɵ (1) = Ɵ (n)
+    </pre>
+    <h4 id="16">SLL Delete (From the beginning)</h4>
+    <pre class="data">
+To remove an element from a list of elements 
+
+<B>•Step 1</B>
+
+• Check whether list is Empty (head == NULL) 
+
+<B>•Step 2</B>
+
+•If list is Empty then, display 'List is Empty!!! Deletion is not possible' and terminate the function. 
+
+<B>•Step 3</B>
+
+•If list is Not Empty then, define a Node pointer 'temp' and initialize with head. 
+
+<B>•Step 4</B>
+
+• Check whether list is having only one node (temp → next == NULL) 
+
+<B>•Step 5</B>
+
+•If there is only one node then head = NULL and
+delete temp (Setting Empty list conditions) 
+
+<B>•Step 6</B>
+
+• If there are more than one node then set head = temp → next, and delete temp.
+    </pre>
+    <h4 id="17">SLL Delete a node from the end of the list</h4>
+    <pre class="data">
+<b>•Step 1</b>
+
+•Check whether list is Empty (head == NULL) 
+
+<b>•Step 2</b>
+
+• If list is Empty then, display 'List is Empty!!! Deletion is not possible' and terminate the function. 
+
+<b>•Step 3</b>
+
+•If list is Not Empty then, define two Node pointers 'temp' and ‘prev' and initialize 'temp' with head. 
+
+<b>•Step 4</b>
+
+•Check whether list has only one Node (temp → next == NULL) 
+
+<b>•Step 4.1</b>
+• If list is empty, then, 
+            •set head = NULL
+            •delete temp. 
+            •terminate the function. 
+
+<b>•Step 4.2</b>
+•If list not empty, then, 
+            •set ‘prev = temp ’ 
+            •move temp to its next node. 
+            •Repeat these steps until it reaches to the last node in the list. (while temp → next != NULL) 
+            
+<b>•Step 5</b>
+
+•Finally, set prev → next = NULL and delete temp.
+    </pre>
+    <h4 id="18">SLL Delete a specific node</h4>
+    <pre class="data">
+<b>•Step 1 </b>
+
+•Check whether list is Empty (head == NULL) 
+
+<b>•Step 2</b>
+
+• If list is Empty then, display 'List is Empty!!! Deletion is not possible' and terminate the function. 
+
+<b>•Step 3</b>
+
+•If list is Not Empty then, define two Node pointers 'temp' and ‘prev' and initialize 'temp' with head. 
+
+<b>•Step 4</b>
+
+• Step 4.1
+            •set ‘prev = temp ’ 
+
+• Step 4.2
+            •if temp -> data is ‘ele’) goto step 5. 
+
+• Step 4.3
+            •else prev = temp and move temp to its next node. 
+
+• Step 4.4
+            •Repeat the steps 4.2 to 4.3 until there are nodes.(while temp != NULL) 
+
+<b>•Step 5</b>
+
+• Step 5.1
+            •if (temp == head) then, head = temp->next; delete temp; 
+
+• Step 5.2
+            •else set prev → next = temp->next and delete temp
+    </pre>
+    <h4 id="20">Circular Singly Linked List</h4>
+    <pre class="data">• A circular singly linked list is list of elements, where each element consists of data and next pointer as values and last node points to first node. 
+
+• These Elements are connected through a link(address).
+    </pre>
+    <h4 id="21">Circular Singly Linked List abstract data type(CSLL ADT)</h4>
+    <pre class="data">// Define the structure of node
+
+typedef struct Node CSLL; 
+struct Node
+{ ElementType Element;
+struct Node *next;
+};
+
+// Define the set of operations
+void Insert_End(CSLL *h, ElementType); 
+void Insert_Before_X(CSLL *h, ElementType, ElementType);
+void Insert_After_X(CSLL *h, ElementType, ElementType);
+ElementType Delete_X(CSLL *, ElementType);
+ElementType Delete_Begin(CSLL *);
+ElementType Delete_End(CSLL *);
+void Traverse(CSLL *);
+void Search(CSLL *, Element Type);
+    </pre>
+    <h4 id="22">CSLL – Insert_End() node creation and alorithm</h4>
+    <pre class="data"><b>NODE CREATION:</b>
+The setup
+Initially the node structure will be defined and header node will be created.
+
+typedef struct Node CSLL;
+struct Node
+{int data;
+CSLL *next;
+}*head = NULL;
+
+<b>ALGORITHM :</b>
+
+Insert_End(CSLL *h, int x)
+
+Input: New data element x, The list h;
+Output: A new node with data x is added to the end of the list h; 
+
+<B>• Step 1 -</B> Create a new_node with given value x and make new_node → next as NULL. 
+
+<B>• Step 2 -</B> Check whether list is Empty (head == NULL). 
+
+<B>• Step 3 -</B> If list is Empty then, set head = new_node and new_node->next = new_node. 
+
+<B>• Step 4 -</B> If list is Not Empty then
+• Step 4.1 - Declare a node pointer temp and initialize with head. 
+• Step 4.2 - Keep moving the temp to its next node until it reaches to the last node in the list(until temp → next is not equal to head). 
+• Step 4.3 - Set temp → next = new_node and new_node->next = head
+
+<B>• Step 5 –</B> STOP.
+    </pre>
+    <h4 id="23">CSLL Insert_End (Logic)</h4>
+    <pre class="data">
+Insert_End(ele, head) // ele is the element to be added, head is the SLL header
+
+//new node creation 
+• struct Node *new_node, *t; 
+• new_node = (struct Node *) malloc(sizeof(struct Node)); 
+• if (new_node == NULL) then, print (“NO memory”) exit(0);
+
+//new node assignment 
+• new_node-->data = x; 
+• new_node-->next=NULL;
+
+// if list is empty then make new_node as first node
+• if( head==NULL) 
+• head=new_node and new_node-->next = new_node;
+
+// if list is not empty, then reach the last node and then add the address of new_node in last node next 
+• else
+            • t=head;
+            //move to the end of list 
+            • while(t-->next!=head) 
+            • t=t-->next;
+        
+//adding node at the end
+• t-->next=new_node and new_node-->next
+
+<B>TIME COMPLEXITY :</B>Ɵ (1) + Ɵ (1) + Ɵ (1) + Ɵ (n)  = Ɵ (n)
+
+    </pre>
+    <h4 id="24">CSLL Insert at the beginning</h4>
+    <pre class="data">
+<B>•Step 1</B>
+
+•Create a new_node with a given value and new_node →next as NULL. 
+
+<B>•Step 2</B>
+
+• Check whether list is Empty (head == NULL). 
+
+<B>•Step 3</B>
+
+• If list is Empty then, set head = new_node and new_node-->next = new_node; 
+
+<B>•Step 4</B>
+
+• If list is Not Empty then, 
+•Declare a node pointers temp, temp1 and initialize with head
+• Set new_node → next = head. 
+• Set head=new_nod
+• Keep moving the temp to its next node until it reaches to the last node in the list (until temp → next is not equal to temp1). 
+• Set temp → next = head.
+
+<B>TIME COMPLEXITY : </B>Ɵ (1) + Ɵ (1) + Ɵ (1) + Ɵ (n) = Ɵ (n)
+    </pre>
+    <h4 id="25">CSLL Insert after a given node (After ele)</h4>
+    <pre class="data">
+<B>•Step 1</B>
+
+•Create a new_node with given value and new_node → next as NULL.
+
+<B>•Step 2</B>
+
+•Check whether list is Empty (head == NULL). 
+
+<B>•Step 3</B>
+
+• If list is Empty then, print “Insertion is not possible”, return;
+
+<B>•Step 4</B>
+
+• If list is Not Empty then, (move to the desirednode) define a node pointer temp and initialize with head. 
+
+<B>•Step 5</B>
+
+•Keep moving the temp to its next node until it reaches to the desired node in the list (until temp → data is not equal to ele and temp != head). 
+
+<B>•Step 6</B> 
+
+•If(temp != head) 
+            •Set new_node → next = temp →next; 
+            •Set temp →next=new_node; 
+•else if(temp == head) 
+            •Display error message “element not found”.
+    </pre>
+    <h4 id="26">CSLL Delete a node from the beginning</h4>
+    <pre class="data">
+(PTR = POINTER)
+Step 1: IF HEAD = NULL
+
+Write UNDERFLOW
+Go to Step 8
+[END OF IF]
+
+Step 2: SET PTR = HEAD
+
+Step 3: Repeat Step 4 while PTR → NEXT != HEAD
+
+Step 4: SET PTR = PTR → next
+[END OF LOOP]
+
+Step 5: SET PTR → NEXT = HEAD → NEXT
+
+Step 6: FREE HEAD
+
+Step 7: SET HEAD = PTR → NEXT
+
+Step 8: EXIT
+    </pre>
+    <h4 id="27">CSLL Delete a node from the end of the list</h4>
+    <pre class="data">
+(PTR=POINTER)
+Step 1: IF HEAD = NULL
+
+Write UNDERFLOW
+Go to Step 8
+[END OF IF]
+
+Step 2: SET PTR = HEAD
+
+Step 3: Repeat Steps 4 and 5 while PTR -> NEXT != HEAD
+
+Step 4: SET PREPTR = PTR
+
+Step 5: SET PTR = PTR -> NEXT
+[END OF LOOP]
+
+Step 6: SET PREPTR -> NEXT = HEAD
+
+Step 7: FREE PTR
+
+Step 8: EXIT
+    </pre>
+    <h4 id="28">CSLL Delete a specific node</h4>
+    <pre class="data">
+        DONT KNOW
+    </pre>
+    <h4 id="29">CSLL Delete a node after a specific element</h4>
+    <pre class="data">
+        DONT KNOW
+    </pre>
+    <h4 id="30">CSLL Display/Traversing</h4>
+    <pre class="data">
+It Is a process of visiting each node and displaying the data in it.
+
+<B>•Step 1</B>
+
+•Check whether list is Empty (head == NULL) 
+
+<B>•Step 2</B>
+
+•If list is Empty then, display 'List is Empty!!!' and terminate the function. 
+
+<B>•Step 3</B>
+
+•If list is Not Empty then, define a Node pointer 'temp' and initialize with head. 
+
+<B>•Step 4</B>
+
+•Keep displaying temp → data until temp reaches to the last node.
+
+<B>TIME COMPLEXITY: </B> Ɵ (1) + Ɵ (1) + Ɵ (1) + Ɵ (n) = Ɵ (n)
+    </pre>
+    <h4 id="31">Doubly Linked List</h4>
+    <pre class="data"><B>DOUBLY LINKED LIST:</B>
+• A doubly linked list or a two-way linked list is a more complex type of linked list which contains a pointer to the next as well as the previous node in the sequence. 
+
+• It is a sequence of elements/nodes and each element consists of three components, 
+• Data: data / value of an element 
+• Next: pointer points to the next node in a list 
+• Prev: pointer points to the previous node in a list
+
+<B>IMPORTANT THINGS IN DLL:</B>
+
+• In double linked list, 
+    • The first node must be always pointed by head.
+    • Always the previous field of the first node must be NULL. 
+    • Always the next field of the last node must be NULL.
+    </pre>
+    <h4 id="32">DLL – Insert_End NODE CREATION AND ALGORITHM</h4>
+    <pre class="data"><b>NODE CREATION:</b>
+
+The setup
+Initially the node structure will be defined and header node will be created.
+typedef struct Node DLL;
+struct Node
+{
+int data;
+DLL *prev;
+DLL *next;
+}*head = NULL;
+
+<B>ALGORITHM:</B>
+
+<B>• Step 1</B> 
+
+• Create a new_node with given value and new_node → prev and 
+new_nodenext as NULL. 
+
+<B>• Step 2</B> 
+
+• Check whether list is Empty (head == NULL) 
+
+<B>• Step 3</B> 
+
+• If list is Empty then, assign new_node to head and return. 
+
+<B>• Step 4</B> 
+
+• If list is not Empty, then, define a node pointer temp and initialize with head. 
+
+<B>• Step 5</B> 
+
+• Keep moving the temp to its next node until it reaches to the last 
+node in the list (until temp → next is not equal to NULL). 
+
+<B>• Step 6</B> 
+
+• set temp → next =new_node and new_node → prev=temp.
+
+<B>TIME COMPLEXITY:</B> Ɵ (1) + Ɵ (1) + Ɵ (1) + Ɵ (1) + Ɵ (n) = Ɵ (n)
+</pre>
+<h4 id="33">DLL - Insert at beginning</h4>
+<pre class="data">
+<B>ALGORITHM:</B>
+
+• Step 1 • Create a new_node with given value and new_node → prev as NULL and new_nodenext as NULL. 
+
+• Step 2 • Check whether list is Empty (head == NULL) 
+
+• Step 3 • If list is Empty then, assign new_node to head, and return. 
+
+• Step 4 • If list is not Empty then, assign head to new_node → next, new_node to head-->prev, and new_node to head
+
+<B>TIME COMPLEXITY:</B> Ɵ (1) + Ɵ (1) + Ɵ (1) + Ɵ (1) = Ɵ (1)
+    </pre>
+    <h4 id="34">DLL - Insert after a specific location</h4>
+    <pre class="data">
+<B>• Step 1</B> 
+
+• Create a new_node with given value and initialize its 
+pointers with NULL. 
+
+<B>• Step 2 </B>
+
+• Check whether list is Empty (head == NULL) 
+
+<B>• Step 3</B>
+
+• If list is Empty then display insertion is not possible, and return. 
+
+<B>• Step 4</B> 
+
+• If list is not Empty then, define a pointer temp and initialize temp with head. 
+
+<B>• Step 5</B> 
+
+• Keep moving the temp until it reaches to the node after which we want to insert the new_node or the list exhausted ( while((temp→data!= desired) && temp!=NULL) ).
+
+<B>• Step 6</B> 
+
+• If temp is NULL then Display 'Given node is not found in the list!!! Insertion not possible!!!' and terminate the function. 
+
+<B>• Step 7</B> 
+
+• new_node→prev=temp, 
+new_node → next=temp-->next; 
+temp-->next=new_node; 
+
+// check if there are nodes or not after temp
+if(new_node-->next != NULL)
+new_node->next->prev=new_node;
+
+<B>TIME COMPLEXITY:</B>Ɵ (n)
+    </pre>
+    <h4 id="35">DLL - Insert before a specific location</h4>
+    <pre class="data">
+<B>• Step 1</B> 
+
+• Create a new_node with given value and initialize its pointers with NULL. 
+
+<B>• Step 2</B> 
+
+• Check whether list is Empty (head == NULL) 
+
+<B>• Step 3</B>
+
+• If list is Empty then Display insertion is not possible, return; 
+
+<B>• Step 4 </B>
+
+• If list is not Empty then, define a pointer temp and initialize temp with head. 
+
+<B>• Step 5</B>
+
+• Keep moving the temp until it reaches to the node before which we want to insert the new_node (while ((temp → data!= desired) && temp!=NULL) ).
+
+<B>• Step 6</B> 
+
+• If list is exhausted then display 'Given node is not found in the list!!! Insertion is not possible!!!' and terminate the function. 
+
+<B>• Step 7</B> 
+
+• new_node→prev=temp-->prev, 
+new_node-->next = temp;
+temp-->prev=new_node;
+
+// if temp is not the first node in the list
+if(new_node-->prev != NULL) 
+new_node-->prev-->next =new_node;
+
+else // new_node is new first node
+head = new_node;
+
+<B>Time Complexity</B> = Ɵ(n) 
+
+
+    </pre>
+    <h4 id="36">DLL Delete a node from the beginning of the list</h4>
+    <pre class="data">
+<B>Step 1 -</B> Check whether list is Empty (head == NULL)
+
+<B>Step 2 -</B> If it is Empty then, display 'List is Empty!!! Deletion is not possible' and terminate the function.
+
+<B>Step 3 -</B> If list is not Empty then, define a Node pointer 'temp' and initialize with head.
+
+<B>Step 4 - </B>Check whether list is having only one node (temp → next == NULL)
+Step 4.1 - If list is having only one node, then set head to NULL and
+delete temp (Setting Empty list conditions)
+Step 4.2 - If list is with more than one node, then assign temp →
+next to head, NULL to head → prev and delete temp.
+
+<B>Time Complexity</B> = Ɵ (1) 
+    </pre>
+    <h4 id="37">DLL Delete a node from the end of the list</h4>
+    <pre class="data">
+<B>STEP 1</B> Check whether list is Empty (head == NULL)
+
+<B>STEP 2</B> - If list is Empty, then display 'List is Empty!!! Deletion is not possible' and terminate the function.
+
+<B>STEP 3</B> - If list is not Empty then, define a Node pointer 'temp' and initialize with head.
+
+<B>STEP 4</B> - Check whether list has only one Node (temp → next ==NULL)
+
+<B>STEP 5</B> - If list has only one node, then assign NULL to head and delete temp. Terminate the function. (Setting Empty list condition)
+
+<B>STEP 6</B> - If list has more than one node, then keep moving temp until it reaches to the last node in the list. (until temp → next is equal to NULL)
+
+<B>STEP 7</B> - Assign NULL to temp → previous → next and delete temp.
+
+<B>Time Complexity</B> = Ɵ (1) + Ɵ (1) + Ɵ (1) + Ɵ (1) + Ɵ (1) + Ɵ (n) + Ɵ(1)= Ɵ (n) 
+    </pre>
+    <h4 id="38">DLL Delete a node after a specific node in the list</h4>
+    <pre class="data">
+<B>STEP 1</B> - Check whether list is Empty (head == NULL)
+
+<B>STEP 2</B> - If it is Empty then, display 'List is Empty!!! Deletion is
+not possible' and terminate the function.
+
+<B>STEP 3</B> - If it is not Empty, then define a Node pointer 'temp' and
+initialize with head and define another pointer ptr.
+
+<B>STEP 4</B> - Keep moving the temp until it reaches to the location 
+after a node to be deleted or to the last node.(while (temp-->data != desired && temp-->next!= NULL)). 
+
+<B>STEP 5</B> – If temp points to last node(temp-->next== NULL), then display 'Deletion is not possible!' and terminate the function. 
+
+<B>STEP 6</B> – 
+Set ptr to temp-->next;
+Set temp-->next=ptr-->next;
+ptr-->next-->prev=temp;
+free(ptr);
+
+<B>Time Complexity</B> = Ɵ (n)
+    </pre>
+    <h4 id="39">DLL Delete a specific node in the list</h4>
+    <pre class="data">
+<B>STEP 1</B> - Check whether list is Empty (head == NULL)
+
+<B>STEP 2</B> - If it is Empty then, display 'List is Empty!!! Deletion is not possible' and terminate the function.
+
+<B>STEP 3</B> - If it is not Empty, then define a Node pointer 'temp' and initialize with head.
+
+<B>STEP 4</B> - Keep moving the temp until it reaches to the exact node to be deleted or there are no nodes left (while tempdata != desired && temp != NULL). 
+
+<B>STEP 5</B> - If the list exhausted, then display 'Given node not found in the list! Deletion not possible!!!' and terminate.
+
+<B>STEP 6</B> - If it is reached to the exact node which we want to delete, then check whether list is having only one node or not (tempprev == head and tempnext == NULL). 
+
+<B>STEP 7</B> - If list has only one node and that is the node which is to be deleted then set head to NULL and delete temp (free(temp)), terminate the function.
+
+<B>STEP 8</B> - If list contains multiple nodes, then check whether temp is the first node in the list (temp == head).
+
+<B>STEP 9</B> - If temp is the first node, then move the head to the next node (head = head → next), set head of previous to NULL (head → previous = NULL) and delete temp, terminate the function.
+
+<B>STEP 10</B> - If temp is not the first node, then check whether it is
+the last node in the list (temp → next == NULL).
+
+<B>STEP 11</B> - If temp is the last node then set temp of previous of
+next to NULL (temp → previous → next = NULL) and delete temp (free(temp)), terminate the function.
+
+<B>STEP 12</B> - If temp is not the first node and not the last node,
+then set temp of previous of next to temp of next (temp → previous → next = temp → next), temp of next of previous to temp of previous (temp → next → previous = temp → previous) and delete temp (free(temp)
+
+<B>Time Complexity</B> = Ɵ (n) 
+    </pre>
+    <h4 id="40">DLL Display</h4>
+    <pre class="data">
+• <B>STEP 1</B> - Check whether list is Empty (head == NULL)
+
+• <B>STEP 2</B> - If it is Empty, then display 'List is Empty!!!' and terminate the function.
+
+• <B>STEP 3</B> - If it is not Empty, then define a Node pointer 'temp' and initialize with head. 
+
+• <B>STEP 4</B> - Keep displaying temp → data until temp reaches to the last node.
+    </pre>
+    <h4 id="41">Circular Doubly Linked List</h4>
+    <pre class="data"><B>CIRCULAR DOUBLY LINKED LIST :</B>
+
+• Any linked list is called circular doubly linked list if it is a doubly linked list and the first node of the list must be connect to the last node and last node must be connected to the first node. 
+
+• It is a sequence of elements/nodes and each element consists of three components, 
+• Data: data / value of an element 
+• Next: pointer points to the next node in a list 
+• Prev: pointer points to the previous node in a list
+    </pre>
+    <h4 id="42">CDLL – Insert_End() NODE CREATION AND ALGO</h4>
+    <pre class="data"><b>NODE CREATION:</b>
+
+The setup
+Initially the node structure will be defined and header node will be created.
+typedef struct Node DLL;
+struct Node
+{
+int data;
+DLL *prev;
+DLL *next;
+}*head = NULL;
+
+<B>ALGORITHM:</B>
+
+• <B>STEP 1</B> 
+• Create a new_node with given value and new_node → prev and new_nodenext as NULL. 
+
+• <B>STEP 2</B> 
+• Check whether list is Empty (head == NULL) 
+
+• <B>STEP 3</B> 
+• If list is Empty then, assign new_node to head, new_nodeprev, and to new_nodenext; terminate the function. 
+
+• <B>STEP 4</B> 
+• If list is not Empty, then, define a node pointer temp and initialize with head. 
+
+• <B>STEP 5</B>
+• If the list is not empty, then
+• Set head to new_node-->next, head-->prev to new_node-->prev,new_node to head-->prev, new_node to head-->prevnext.
+
+<B>TIME COMPLEXITY</B> = Ɵ (1) + Ɵ (1) + Ɵ (1) + Ɵ (1) 
+= Ɵ (1)
+    </pre>
+    <h4 id="43">CDLL - Insert at beginning</h4>
+    <pre class="data">
+• <B>STEP 1</B> 
+• Create a new_node with given value and new_node → prev as NULL and new_nodenext as NULL. 
+
+• <B>STEP 2</B> 
+• Check whether list is Empty (head == NULL) 
+
+• <B>STEP 3</B> 
+• If list is Empty then, assign new_node to head,new_node-->prev, and to new_node-->next; terminate the function. 
+
+• <B>STEP 4</B> 
+• If list is not Empty then, assign head to new_node → next, head-->prev to new_node-->prev, new_node to head-->prev-->next, new_node to head-->prev-->next, and new_node to head
+
+<B>Time Complexity</B> = Ɵ (1) + Ɵ (1) + Ɵ (1) + Ɵ (1)  = Ɵ (1)
+    </pre>
+    <h4 id="44">CDLL - Insert after a specific location</h4>
+    <pre class="data"-->
+• <B>STEP 1</B> 
+• Create a new_node with given value and initialize its pointers with NULL. 
+
+• <B>STEP 2</B> 
+• Check whether list is Empty (head == NULL) 
+
+• <B>STEP 3</B>
+• If list is Empty then display insertion is not possible, and return. 
+
+• <B>STEP 4</B> 
+• If list is not Empty then, define a pointer temp and initialize temp with head. 
+
+• <B>STEP 5</B> 
+• Keep moving the temp until it reaches to the node after which we want to insert the new_node or the list exhausted (while( (temp→data!= desired) && temp!=head) ).
+
+• <B>STEP 6</B> 
+• If temp is equal to head then Display'Given node is not found in the list!!! Insertion not possible!!!' and terminate the function. 
+
+• <B>STEP 7</B> 
+• new_node→prev=temp, 
+new_node → next=temp-->next; 
+temp-->next=new_node; 
+new_node->next->prev=new_node;
+
+<B>Time Complexity</B> = Ɵ (n) 
+    </pre>
+    <h4 id="45">CDLL - Insert before a specific location</h4>
+    <pre class="data">
+• <B>STEP 1</B> 
+• Create a new_node with given value and initialize its pointers with NULL. 
+
+• <B>STEP 2</B> 
+• Check whether list is Empty (head == NULL) 
+
+• <B>STEP 3</B>
+• If list is Empty then Display insertion is not possible, return; 
+
+• <B>STEP 4</B> 
+• If list is not Empty then, define a pointer temp and initialize temp with head. 
+
+• <B>STEP 5</B>
+• Keep moving the temp until it reaches to the node before which we want to insert the new_node (while ((temp → data!= desired) &&temp!=head) ).
+
+• <B>STEP 6</B> 
+• If list is exhausted then display 'Given node is not found in the list!!! Insertion is not possible!!!' and terminate the function. 
+
+• <B>STEP 7</B> 
+• new_node→prev=temp-->prev, 
+new_node-->next = temp;
+new_node-->prevnext = new_node;
+temp-->prev =new_node;
+
+// if temp is the previous first node then update head
+if(temp == head ) 
+head = new_node;
+
+<B>Time Complexity</B> = Ɵ(n)
+    </pre>
+    <h4 id="46">CDLL Delete a node from the beginning of the list</h4>
+    <pre class="data">
+<b>STEP 1</b> - Check whether list is Empty (head == NULL)
+
+<b>STEP 2</b> - If it is Empty then, display 'List is Empty!!! Deletion is not possible' and terminate the function.
+
+<b>STEP 3</b> - If list is not Empty then, define a Node pointer 'temp' and
+initialize with head.
+
+<b>STEP 4</b> - Check whether list is having only one node (temp → next== temp && temp-->prev = temp)
+Step 4.1 - If list is having only one node, then set head to NULL and
+delete temp (Setting Empty list conditions)
+Step 4.2 - If list is with more than one node, then assign temp →
+next to head, temp-->next to temp-->prev-->next, temp-->prev to temp-->next-->prev, and delete temp.
+
+<B>TIME COMPLEXITY</B> = Ɵ (1) 
+    </pre>
+    <h4 id="47">CDLL Delete a node from the  end of the list</h4>
+    <pre class="data">
+<B>STEP 1</B> - Check whether list is Empty (head == NULL)
+
+<B>STEP 2</B> - If list is Empty, then display 'List is Empty!!! Deletion
+is not possible' and terminate the function.
+
+<B>STEP 3</B> - If list is not Empty then, define a Node pointer 'temp'
+and initialize with head-->prev. 
+
+<B>STEP 4</B> - Check whether list has only one Node (temp → next ==head)
+
+<B>STEP 5</B> - If list has only one node, then assign NULL to head and delete temp. Terminate the function. (Setting Empty list condition)
+
+<B>STEP 6</B> - If list has more than one node, Assign head to temp → previous → next, temp-->prev to head-->prev and delete temp.
+
+<B>Time Complexity</B> = Ɵ (1)
+    </pre>
+    <h4 id="48">CDLL Delete a node after a specific node in the list</h4>
+    <pre class="data">
+<B>STEP 1</B> - Check whether list is Empty (head == NULL)
+
+<B>STEP 2</B> - If list is Empty then, display 'List is Empty!!! Deletion is
+not possible' and terminate the function.
+
+<B>STEP 3</B> - If list is not Empty, then define a Node pointer 'temp' and
+initialize with head also define a Node pointer ptr.
+
+<B>STEP 4</B> - Keep moving the temp until it reaches to the location 
+after a node to be deleted or to the last node.(while (temp-->data != desired && temp-->next != head)). 
+
+<B>STEP 5</B> – If temp points to last node(temp-->next== head), then display 'Deletion is not possible!' and terminate thefunction. 
+
+<B>STEP 6</B> – 
+Set ptr to temp-->next;
+Set temp-->next=ptr-->next;
+ptr-->next-->prev=temp;
+free(ptr);
+
+<B>Time Complexity</B> = Ɵ (n) 
+    </pre>
+    <h4 id="49">CDLL Display</h4>
+    <pre class="data">
+• <B>STEP 1</B> - Check whether list is Empty (head == NULL)
+
+• <B>STEP 2</B> - If it is Empty, then display 'List is Empty!!!' and terminate the function.
+
+• <B>STEP 3</B> - If it is not Empty, then define a Node pointer 'temp' and initialize with head. 
+
+• <B>STEP 4</B> - Keep displaying temp → data until temp reaches to the last node.
+    </pre>
+    <h4 id="50">Complexity Analysis</h4>
+    <pre class="data">
+        <img src="5.png" alt="">
+    </pre>
+<a href="#top">BACK TO TOP</a>
+
+</body>
+</html>

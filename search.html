@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEARCH AND SORT</title>
+    <style>
+        .data{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, sans-serif;
+            font-size:20px;
+        }
+        .mainhed{
+                font-size:20px;
+                text-decoration:none;
+                color:red;
+                font-family:fantasy;
+            }
+            .subhed{
+                color: black;
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+            }
+            body{
+                background-repeat: no-repeat ;
+                background-color: 
+/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#f9e886+35,68d6c0+69,68d6c0+72 */
+background: rgb(249,232,134); /* Old browsers */
+background: -moz-linear-gradient(left,  rgba(249,232,134,1) 35%, rgba(104,214,192,1) 69%, rgba(104,214,192,1) 72%); /* FF3.6-15 */
+background: -webkit-linear-gradient(left,  rgba(249,232,134,1) 35%,rgba(104,214,192,1) 69%,rgba(104,214,192,1) 72%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to right,  rgba(249,232,134,1) 35%,rgba(104,214,192,1) 69%,rgba(104,214,192,1) 72%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f9e886', endColorstr='#68d6c0',GradientType=1 ); /* IE6-9 */
+
+
+            }
+            h4{
+                font-size:20px;
+                color:red;
+                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                text-transform: capitalize;
+            }
+            a{
+                text-decoration: none;
+            }
+            ::selection{
+                color: black;
+                background: lightslategray;
+            }
+    </style>
+</head>
+<body>
+    <h1 id="top"><a href="HOME.html">HOME PAGE</a></h1>
+    <h1>SEARCH AND SORT</h1>
+    <ul type=disc>
+                <li class="subhed"><a href="#1">SEARCHING</a></li>
+                <li class="subhed"><a href="#2">Linear Search</a></li>
+                <ol type="1">
+                <li class="subhed"><a href="#3">Linear Search algo</a></li>
+                <li class="subhed"><a href="#4">Complexity Analysis linear search</a> 
+                </li>
+                <li class="subhed"><a href="#5">Limitations of Linear Search</a></li>
+                </ol>
+                <li class="subhed"><a href="#6">Binary Search</a></li>
+                <ol type="1">
+                <li class="subhed"><a href="#7">Binary Search algo</a></li>
+                <li class="subhed"><a href="#8">best case</a></li>
+                <li class="subhed"><a href="#9">Average Case</a></li>
+                <li class="subhed"><a href="#10">Worst Case</a></li>
+                <li class="subhed"><a href="#11">Binary Search Time Complexity</a></li></ol>
+                <li class="subhed"><a href="#12">SORTING</a></li>
+                <li class="subhed"> <a href="#13">Sorting Methods</a></li>
+                <li class="subhed"><a href="#14">SORTING - Terminology</a></li>
+                <li class="subhed"><a href="#15">SELECTION SORTING</a></li>
+                <ol type="1">
+                <li class="subhed"><a href="#16">ALGORITHM - Selection Sort</a></li>
+                <li class="subhed"><a href="#17">Selection Sort– Time Complexity</a></li>
+                <li class="subhed"><a href="#18">Advantages & DisAdvantages</a></li>
+                <li class="subhed"><a href="#19">QUESTIONS ON SELECTION SORT</a></li></ol>
+                <li class="subhed"><a href="#20">Bubble sort</a></li>
+                <ol type="1">
+                <li class="subhed"><a href="#21">ALGORITHM - Bubble Sort</a> </li>
+                <li class="subhed"><a href="#22">Bubble Sort – Time Complexity (average and worst cases)</a></li>
+                <li class="subhed">B<a href="#23">ubble Sort – Time Complexity (Best case)</a></li>
+                <li class="subhed"><a href="#24">Advantages & DisAdvantages</a></li></ol>
+                <li class="subhed"><a href="#25">INSERTION SORT</a></li>
+                <ol type="1">
+                <li class="subhed"><a href="#26">ALGORITHM – Insertion Sort</a></li>
+                <li class="subhed"><a href="#27">Insertion Sort– Time Complexity (average and worst cases)</a></li>
+                <li class="subhed"><a href="#28">Insertion Sort– Time Complexity (Best case)</a></li>
+                <li class="subhed"><a href="#29">Advantages & DisAdvantages</a></li></ol>
+                <li class="subhed"><a href="#30">Merge Sort</a></li>
+                <ol type="1">
+                <li class="subhed"><a href="#31">Merge Sort (pseudo code)</a></li>
+                <li class="subhed"><a href="#32">Merge Sort Time Complexity</a></li>
+                <li class="subhed"><a href="#33">Merge Sort Space Complexity</a></li></ol>
+                <li class="subhed"><a href="#34">Quick Sort</a></li>
+                <ol type="1">
+                <li class="subhed"><a href="#35">Quick Sort (pseudo code)</a></li>
+                <li class="subhed"><a href="#36">Pivot Selection strategies</a></li>
+                <li class="subhed"><a href="#37">Quick Sort Time Complexity best case</a></li>
+                <li class="subhed"><a href="#38">Quick Sort Time Complexity average case</a></li>
+                <li class="subhed"><a href="#39">Quick Sort Time Complexity worst case</a></li></ol>
+                <li class="subhed"><a href="#40">Bucket Sort</a></li>
+                <ol type="1">
+                <li class="subhed"><a href="#41">Bucket Sort (Pseudo code)</a></li>
+                <li class="subhed"><a href="#42">Bucket Sort Complexity</a></li></ol>
+                <li class="subhed"><a href="#43">Hashing</a></li>
+                <li class="subhed"><a href="#44">Components of Hashing</a></li>
+                <li class="subhed"><a href="#45">Collision Resolution Techniques</a></li>
+                <ol type="1"></ol>
+                <li class="subhed"><a href="#46">Collision Resolution Techniques-Separate Chaining</a></li>
+                <li class="subhed"><a href="#47">Collision Resolution Technique – Linear Probing</a></li>
+                <li class="subhed"><a href="#48">Collision Resolution Technique – Quadratic Probing</a></li>
+                <li class="subhed"><a href="#49">Collision Resolution Technique – Double Hashing</a></li>
+                <li class="subhed"><a href="#50">HEAP SORT</a></li>
+            </ul>
+<h4 id="1">SEARCHING</h4>
+    <pre class="data">
+<b>Searching</b> – It is the process of looking/searching for a specific element in the given list of elements.
+
+Searching Techniques –
+1. Linear Search
+2. Binary Search
+    </pre>
+    <h4 id="2">Linear Search</h4>
+    <pre class="data">
+<b>Linear Search</b> – It is the process of comparing the given searching element s with the each and every element in the given list of elements A.
+
+<b>sequential search:</b>
+Compares searching element with each and every element of the array/List (data structure), if the searching element s found in the list A then it returns the location of searching element from the list
+of elements otherwise it returns the -1.
+    </pre>
+    <h4 id="3">Linear Search algo</h4>
+    <pre class="data">
+<b>STEP 1</b> – Let i := 0
+
+<b>STEP 2</b>: Compare the searching element s with the ith element in the list A. 
+
+<b>STEP 3</b> - If both are matched, then return i+1.
+
+<b>STEP 4</b> - If both are not matched, then incre
+    </pre>
+    <h4 id="4">Complexity Analysis linear search</h4>
+    <pre class="data">
+• <B>Best Case</B>
+
+• if searching element is found at first index.
+
+• <B>Worst Case:</B>
+
+• searching element is found at the last position
+
+• <B>Average Case:</B>
+
+• searching element is found at middle of the array
+    </pre>
+    <h4 id="5">Limitations of Linear Search</h4>
+    <pre class="data">
+Linear search can not take the advantage in reducing the number of comparisons when the elements are in sorting order
+    </pre>
+    <h4 id="6">Binary Search</h4>
+    <pre class="data">
+• IF The input for the Binary search is the sorted elements (pre constraint). 
+
+• <B>BINARY SEARCH PROCESS</B> - Compare searching element with the middle element in the list. There are three possibilities
+
+1. If the middle element is greater than searching element then the searching element may found only in the first half of the elements (Searching array size reduced to half).
+
+2. If the middle element is less than searching element then the searching element may found only in the second half of the elements (Searching array size reduced to half)
+
+3. If the middle element matches with the searching element, then return the position of the middle element. • The above three steps are repeated until it matches or elements exhausted.
+    </pre>
+    <h4 id="7">Binary Search algo</h4>
+    <pre class="data">
+Assumption: the data elements of list are in sorted order
+
+• <b>STEP 1</b> - Find the middle element in the sorted list. 
+
+• <b>STEP 2</b> - Compare the search element with the middle element in the
+sorted list. 
+
+• <b>STEP 3</b> - If both are matched, then display "Given element is found!!!" and terminate the function. 
+
+• <b>STEP 4</b> - If both are not matched, then check whether the search element is smaller or larger than the middle element. 
+
+• <b>STEP 5</b> - If the search element is smaller than middle element, repeat steps 2, 3, 4, 5 and 6 for the left sub list of the middle element. 
+
+• <b>STEP 6</b> - If the search element is larger than middle element, repeat
+steps 2, 3, 4 and 5 for the right sub list of the middle element. 
+
+• <b>STEP 7</b> - Repeat the process until we find the search element in the list or until sub list contains only one element. 
+
+• <b>STEP 8</b> - If that element also dosent match with the search element, then display "element is not found in the list" and terminate the function.
+    </pre>
+    <h4 id="8">best case</h4>
+    <pre class="data">
+The best case of binary search is when the first comparison/guess is correct (the key item is equal to the mid of array). It means, regardless of the size of the list/array, we’ll always get the result in constant time. So the best case complexity is O (1).
+    </pre>
+    <h4 id="9">Average Case</h4>
+    <pre class="data">
+The average case for unsuccessful searches is the number of iterations required to search an element within every interval exactly once, divided by the intervals.
+    </pre>
+    <h4 id="10">Worst Case</h4>
+    <pre class="data">
+The worst-case scenario could be the values at either extremity of the list or values not in the list.
+    </pre>
+    <h4 id="11">Binary Search Time Complexity</h4>
+    <pre class="data">
+TIME COMPLEXITY : 
+
+T(n) = Θ(1 * log<SUB>2</SUB> <SUP>k+1</SUP> n) = Θ(log n)
+    </pre>
+    <h4 id="12">SORTING</h4>
+    <pre class="data">
+<B>SORTING</B> – Sorting refers to the operation of arranging data in some given order, such as increasing or decreasing with numerical data, or alphabetically with character data.
+
+<B>Types of sorting –</B>
+
+1. Internal sorting - Sorts the data resides in the computer’s memory.
+
+2. External Sorting - Deals with sorting the data stored in files. External sorting is applied when there is large amount of data that cannot be stored in memory.
+Example - Multiway merging
+    </pre>
+    <h4 id="13">Sorting Methods</h4>
+    <pre class="data">
+<B>Internal Sorting Methods –</B>
+
+1. Selection sort
+2. Bubble sort
+3. Insertion sort
+4. Merge sort
+5. Quick sort
+6. Heap sort
+7. Bucker Sort
+    </pre>
+    <h4 id="14">SORTING - Terminology</h4>
+    <pre class="data">
+<B>In-place sorting</B> - Any sorting algorithm is called In-place sorting algorithm if it uses constant space for sorting the elements. It sorts the elements by changing the order of the elements within the given list.
+
+<B>Stable sorting</B> - Any sorting algorithm is called stable sorting algorithm if two elements with e
+    </pre>
+    <h4 id="15">SELECTION SORTING</h4>
+    <pre class="data">
+<B>SELECTION SORT:</B>
+
+1. Select the smallest element in the given list of n elements and place it in the first position.
+
+2. Now Select smallest element in the remaining list of n-1 elements and place it in the second position. 
+
+3.Repeat this procedure until the entire array is sorted.
+
+<B>DETAILED PROCEDURE: </B>
+
+• The first element in the list is selected and it is compared repeatedly with all the remaining elements in the list. If any element is smaller than the selected element, then both are swapped, so that first position is filled with the smallest element in the sorted order. 
+
+• Next, we select the element at a second position in the list and it is compared with all the remaining elements in the list. If any element is smaller than the selected element, then both are swapped. 
+
+• This procedure is repeated until the entire list is sorted
+    </pre>
+    <h4 id="16">ALGORITHM - Selection Sort</h4>
+    <pre class="data">
+Selection_sort (Element Type A[],int n) // Assumption – index starts with 0
+
+1. Set i = 0, j = i + 1
+
+2. while(i < n-1) // Number of passes
+    i. set j = i + 1 // j starts from the next element of i
+    ii. while(j < n) // j go through the jth element to nth element
+        i. if (A[j] < A[i]) // if i pointed element is greater than j pointed element, then swap them
+            i. Swap (A[i], A[j]) 
+        ii. j = j + 1.
+iii.i = i + 1.
+
+3. Return.
+    </pre>
+    <h4 id="17">Selection Sort– Time Complexity</h4>
+    <pre class="data">
+T(n) = O(n2) [In all cases]
+    </pre>
+    <h4 id="18">Advantages & DisAdvantages</h4>
+    <pre class="data">
+Advantages:
+
+1. Simple technique.
+2. In-place sorting (no extra memory required)
+
+Dis Advantages:
+
+1. Too many comparison
+    </pre>
+    <h4 id="19">QUESTIONS ON SELECTION SORT</h4>
+    <pre class="data">
+• Can we reduce the number of swaps ?
+Yes
+
+• How ?
+
+At pass k find the index of the kth smallest element and at the end of the pass k swap the kth element with the element at the index of the kth smallest. 
+
+• Is selection sorting is in-place sorting algorithm?
+Yes
+
+• Is selection stable sorting algorithm = yes
+    </pre>
+    <h4 id="20">Bubble sort</h4>
+    <pre class="data">
+Bubble sort –
+
+<B>The algorithm does two steps:</B>
+
+1. Starts at one end of the array and make repeated scans through the list comparing  successive pairs of elements (Adjacent elements).
+
+2. If the first element is larger than the second, called as an inversion, then the values are swapped.
+
+<B>DETAILED PROCESS:</B>
+
+The algorithm works by repeatedly stepping through the list to be sorted, comparing each pair of adjacent items and swapping them if they are in the wrong order.
+
+The pass through the list is repeated until no swaps are needed.
+    </pre>
+    <h4 id="21">ALGORITHM - Bubble Sort</h4>
+    <pre class="data">
+Bubble_Sort (Element Type A[], int n)
+
+1. Set i = 0 // Assumption – index starts with 0
+
+2. while (i < n-1) // Number of passes
+    i. set j = 0, flag = 0 // flag stores the status of swaps in each pass 
+    ii. while(j < n – i - 1) // Number of comparisons in ith pass
+        i. if (A[j] > A[j+1]) // Compare jth element with j+1th element
+            i. Swap (A[j], A[j+1]) // If jth element is greater than j+1th element then swap them
+            ii. flag = 1 // If swap happened then change the status
+        ii. j = j + 1. 
+    iii. if flag == 0 // If no swap happened in ith pass then stop the remining passes
+        i. break;
+    iv.i = i + 1.
+3. Return.
+    </pre>
+    <h4 id="22">Bubble Sort – Time Complexity (average and worst cases)</h4>
+    <pre class="data">
+T(n) = O(n<sup>2</sup>>) [In average and worst case]
+    </pre>
+    <h4 id="23">Bubble Sort – Time Complexity (Best case)</h4>
+    <pre class="data">
+T(n) = O(n)
+    </pre>
+    <h4 id="24">Advantages & DisAdvantages</h4>
+    <pre class="data">
+Advantages:
+
+1. It can detect whether the input is already sorted or not
+2. In-place sorting (no extra memory required)
+
+Dis Advantages:
+
+1. Too many comparison
+    </pre>
+    <h4 id="25">INSERTION SORT</h4>
+    <pre class="data">
+<b>IDEA OF INSERTION SORT:</b>
+
+The idea of insertion sort is similar to the idea of sorting playing cards; Pick a card and place it at the right place by moving cards to the right. 
+
+• Elements are considered in sorted and unsorted order. 
+
+• Every iteration moves an element from unsorted portion to sorted portion until all the elements are sorted in the list. 
+
+• The insertion sort algorithm is performed using the following steps:
+
+• Step 1 - Assume that first element in the list is in sorted portion and all the remaining elements are in unsorted portion. 
+
+• Step 2: Take first element from the unsorted portion and insert that element into the sorted portion in theorder specified. 
+
+• Step 3: Repeat the above process until all the elements from the unsorted portion are moved into the sorted portion.
+    </pre>
+    <h4 id="26">ALGORITHM – Insertion Sort</h4>
+    <pre class="data">
+• Algorithm
+
+//Assumption is that index starts with 0
+
+• int a[100] ; //declare array a of size 100 
+• Input n // n is used to sort how many numbers
+
+• for i = 0 to n-1 // read the array elements
+    • Read a[i]; i++;
+
+• for i = 1 to n-1 
+    • for (k = i; k > 0 and a[k] < a[k-1]; k--) 
+        • swap a[k] and a[ k-1] // invariant: a[1..i] is sorted
+
+• output a[1] to a[n]
+    </pre>
+    <h4 id="27">Insertion Sort– Time Complexity (average and worst cases)</h4>
+    <pre class="data">
+T(n) =  O(n<SUP>2</SUP>) [In average and worsst cases]
+    </pre>
+    <h4 id="28">Insertion Sort– Time Complexity (Best case)</h4>
+    <pre class="data">
+T(n) =  O(n)
+    </pre>
+    <h4 id="29">Advantages & DisAdvantages</h4>
+    <pre class="data">
+Advantages:
+
+1. If the input is sorted [may not be completely] then it will do only n+d comparisons, where d is the number of inversions.
+2. Insertion sort can sort the list as it receives [online] 
+3. Practically more efficient than selection and bubble sort.
+4. In-place sorting (no extra memory required)
+5. Stable sorting.
+
+Dis Advantages:
+1. Too many comparisons (O(n<sup>2</sup>)) if the input is sorted in reverse order
+    </pre>
+    <h4 id="30">Merge Sort</h4>
+    <pre class="data">
+<b>MERGE SORT:</b>
+
+Merging is the process of combining two sorted lists to make one bigger sorted list
+
+Basic Idea of Merge sort:
+
+1. Divide the given input list into two halves
+(Apply this step on the divided sub lists till the sub list size reached to one)
+
+2. Recursively sort each sub list.
+
+3. merge the two sorted sublists.(from bottom to top)
+    </pre>
+    <h4 id="31">Merge Sort (pseudo code)</h4>
+    <pre class="data">
+void Merge_Sort(int A[], int low, int high) // A – input array, low – lower index, high – higher index
+
+{ if (low < high) // If there are more than one element
+        { int mid = (low + high) / 2;
+        Merge_Sort(A, low, mid); // call the merge sort on first half of the elements of A
+        Merge_Sort(A, mid+1, high); // call the merge sort on second half of the elements of A
+        Merge(A, low, mid, high); // Merge the sorted elements of the first half and second half
+    }
+}
+    </pre>
+    <h4 id="32">Merge Sort Time Complexity</h4>
+    <pre class="data">
+T(n) = Θ(n * log<sub>2</sub><sup>k+1</sup> n) =Θ(nlog n) // in all cases
+    </pre>
+    <h4 id="33">Merge Sort Space Complexity</h4>
+    <pre class="data">
+• Space Complexity of Merge Sort is
+T(n) = O(n)
+    </pre>
+    <h4 id="34">Quick Sort</h4>
+    <pre class="data">
+<b>QUICK SORT:</b>
+
+• Quick sort is also follows the divide, and conquer algorithmic paradigm. It is also called as partition-exchange sort.
+
+• Idea:
+
+• Select randomly one element (Call it as pivot) from the elements to sort (generally first element) 
+• Partition the given array into two subsists such that one list contains all the elements less than or equal to chosen element (pivot element) and the another list contains the elements greater than
+chosen element (pivot element) 
+
+• Now the pivot element is in its sorted position. 
+
+• Apply the same procedure on the sub lists till there are no sub lists.
+
+<B>Partition procedure</B>
+
+1. Select the first element in the list as pivot element.
+
+2. Initialize one pointer called it as left at the first element of the list, and initialize another pointer called it as right at the last element of the list.
+
+3. Repeatedly move the left pointer to next position until the left pointer pointed element is less than or equal to pivot element or the pointer reached to last position.
+
+4. Repeatedly move the right pointer to its previous position until the right pointer pointed element is greater than pivot element or the pointer reached to first position.
+
+5. If left < right // if they do not cross each other
+    1. Swap the elements pointed by left and right and continue to steps 3 and 4
+
+6. if left >= right //if they cross each other or they both points same position
+    1. swap the right pointed element and the pivot element
+    </pre>
+    <h4 id="35">Quick Sort (pseudo code)</h4>
+    <pre class="data">
+void Quick_Sort(int A[], int low, int high) // A – input array, p is the lower limit of A and q is the higher limit of A
+
+{ if (low < high) // If there are more than one element
+    { int p = Partition(A, low, high);
+    Quick_Sort(A, low, p-1); // call the merge sort on first half of the elements of A
+    Quick_Sort(A, p+1, high); // call the merge sort on second half of the elements of A
+    }
+}
+    </pre>
+    <h4 id="36">Pivot Selection strategies</h4>
+    <pre class="data">
+<b>statergy 1</b> 
+
+The popular one is selecting the first element as pivot element. This is good if input is random, but it is not good if the input is pre-sorted or sorted in reverse order.
+
+<b>statergy 2</b> 
+
+The second strategy is choose the pivot randomly. It is the one of the preferable one. 
+
+<b>statergy 3</b> (Median of three partitioning) 
+
+Pick three randomly and use the median of these three elements
+    </pre>
+    <h4 id="37">Quick Sort Time Complexity best case</h4>
+    <pre class="data">
+T(n) = Θ(n * log<sub>2</sub> <sub>k+1</sub> n) = Θ(nlog n) // in best case
+    </pre>
+    <h4 id="38">Quick Sort Time Complexity average case</h4>
+    <pre class="data">
+time complexity = T(n) = O(n logn)
+    </pre>
+    <h4 id="39">Quick Sort Time Complexity worst case</h4>
+    <pre class="data">
+T(n) = O(n<sup>2</sup>)
+    </pre>
+    <h4 id="40">Bucket Sort</h4>
+    <pre class="data">
+<b>BUCKET SORT:</b>
+Bucket sort is applied when the input is uniformly distributed over a range and even it is used in the case where there are floating point numbers in a fixed range.
+
+Idea:
+
+1. Sorts the elements by first dividing the given elements into several groups called buckets. 
+
+2. The elements in each bucket are sorted using any of the suitable sorting algorithms or by recursively calling the same algorithm.
+
+3. Collect the elements from the first bucket to last bucket
+
+    </pre>
+    <h4 id="41">Bucket Sort (Pseudo code)</h4>
+    <pre class="data">
+DONT KNOW
+    </pre>
+    <h4 id="42">Bucket Sort Complexity</h4>
+    <pre class="data">
+<B>TIME COMPLEXITY:</B>
+Best Case and average case:
+
+If the elements in buckets are already sorted and we used insertion sort or elements are distributed evenly
+T(n) = O(n) //if n >> k, where k is the number of buckets
+
+Worst case:
+
+If most of the elements are fall in fewer buckets and elements are already in the sorted reverse order and we used insertion sort
+T(n) = O(n2)
+
+<B>SPACE COMPLEXITY:</B>T(n) = O(nk)
+    </pre>
+    <h4 id="43">Hashing</h4>
+    <pre class="data">
+<B>Hashing</B> - Hashing is a technique used for storing and retrieving information as quickly as possible.
+
+Hashing is a technique do more faster than these algorithms (most or the times we want to search in constant time).
+
+<B>Why Hashing?</B>
+
+Most of the searching algorithms like linear search, Binary search do the searching operation in linear or logarithmic time. We want to do more quicker than these algorithms.
+    </pre>
+    <h4 id="44">Components of Hashing(hash table, hash function)</h4>
+    <pre class="data">
+1. Hash Table – An array to store the elements (The common convention to have the table run from 0 to TableSize-1).
+
+2. Hash Function - It is a specific method for calculating the array index from the element. Each key (key is a string with a n associated value) is mapped into some number in the range 0 to TableSize-1 and placed in the appropriate cell. The mapping is called hash function. 
+
+3. Collision Resolution Technique - Algorithms and Data Structures to handle the situation such that if two keys are hashed into the same array index (Must give alternative location for the second one)
+
+<b>why are these required?</b>
+
+-->An efficient hash function should be designed so that it distributes the index values of inserted elements uniformly across the table.
+
+-->An efficient collision resolution technique must compute an alternative index for a key whose hash index corresponding to a location previously inserted in the hash table.
+
+-->We must choose a hash function which can be calculated quickly, returns value with in the range of locations in our table and minimizes collisions.
+    </pre>
+    <h4 id="45">Collision Resolution Techniques</h4>
+    <pre class="data">
+Collision – “When two or more keys hashing into the same location”
+
+Collision Resolution Techniques:
+• Direct Chaining
+    Separate Chaining
+
+• Open Addressing
+    Linear Probing
+    Quadratic Probing
+    double hashing
+    </pre>
+    <h4 id="46">Collision Resolution Techniques-Separate Chaining</h4>
+    <pre class="data">
+<b>Separate Chaining</b> - When two or more elements has to the same location, then these records are constituted into a single linked list called as chain.
+
+<B>LIMITATION OF SEPERATE CHAINING:</B>
+Separate chaining has the limitation of requiring pointers. This results in slow the algorithm down a bit because of the time required to allocate the new cells, and also require the implementation of a second data structure
+    </pre>
+    <h4 id="47">Collision Resolution Technique – Linear Probing</h4>
+    <pre class="data">
+<B>OPEN HASHING:</B>
+Open addressing hashing is an alternative technique to resolve the collisions. When a collision occurs an alternative location is tried until an empty location is found.
+
+<B>LINEAR PROBING:</B>
+Linear Probing - We search the hash table sequentially starting from the original hash location till we find the free location.
+    </pre>
+    <h4 id="48">Collision Resolution Technique – Quadratic Probing</h4>
+    <pre class="data">
+<B>OPEN HASHING:</B>
+Open addressing hashing is an alternative technique to resolve the collisions. When a collision occurs an alternative location is tried until an empty location is found.
+
+<B>QUADRATIC PROBING:</B>
+Start from the original hash function, we check the location 
+i + 1<SUP>2</SUP>,
+i + 2<SUP>2</SUP>,
+i + 3<SUP>2</SUP> +……..
+    </pre>
+    <h4 id="49">Collision Resolution Technique – Double Hashing</h4>
+    <pre class="data">
+<B>OPEN HASHING:</B>
+Open addressing hashing is an alternative technique to resolve the collisions. When a collision occurs an alternative location is tried until an empty location is found.
+
+<B>DOUBLE HASHING:</B>
+Double Hashing- Use second hash function whenever the collision occurs.
+    </pre>
+    <h4 id="50">HEAP SORT</h4>
+    <pre class="data">
+<B>Heap Sort (From Max Heap):</B>
+
+1. Construct the Max Heap from the given input
+
+2. Remove the root and put it at the end of the array. Put the last element of the heap at the vacant place (At root)
+
+3. Reduce the size of the heap by one and heapify the root element again so that we have highest element at the root.
+
+4. The process is repeated until all the elements of the list are sorted.
+    </pre>
+
+    <a href="#top">BACK TO TOP</a>
+
+</body>
+</html>

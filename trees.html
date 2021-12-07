@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TREES AND GRAPHS</title>
+    <style>
+        .data{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, sans-serif;
+            font-size:20px;
+        }
+        .mainhed{
+                font-size:20px;
+                text-decoration:none;
+                color:red;
+                font-family:fantasy;
+            }
+            .subhed{
+                color: black;
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+            }
+            body{
+                background-repeat: no-repeat ;
+                background-color: 
+/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#f9e886+35,68d6c0+69,68d6c0+72 */
+background: rgb(249,232,134); /* Old browsers */
+background: -moz-linear-gradient(left,  rgba(249,232,134,1) 35%, rgba(104,214,192,1) 69%, rgba(104,214,192,1) 72%); /* FF3.6-15 */
+background: -webkit-linear-gradient(left,  rgba(249,232,134,1) 35%,rgba(104,214,192,1) 69%,rgba(104,214,192,1) 72%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to right,  rgba(249,232,134,1) 35%,rgba(104,214,192,1) 69%,rgba(104,214,192,1) 72%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f9e886', endColorstr='#68d6c0',GradientType=1 ); /* IE6-9 */
+
+
+            }
+            h4{
+                font-size:20px;
+                color:red;
+                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                text-transform: capitalize;
+            }
+            a{
+                text-decoration: none;
+            }
+            ::selection{
+                color: black;
+                background: lightslategray;
+            }
+    </style>
+</head>
+<body>
+    <h1 id="top"><a href="HOME.html">HOME PAGE</a></h1>
+    <h1>TREES AND GRAPHS</h1>
+                <ul type=disc>
+                <li class="subhed"><a href="#1">Trees</a></li>
+                <li class="subhed"><a href="#2">Trees Terminology</a></li>
+                <li class="subhed"><a href="#3">Representation of Trees</a></li><br>
+                <li class="subhed"><a href="#4">Binary Tree</a></li>
+                <ol type="1">
+                <li class="subhed"><a href="#5">Types of Binary Trees</a></li>
+                <li class="subhed"><a href="#6">Properties of Binary Trees</a></li>
+                <li class="subhed"><a href="#7">Representation of Binary Trees</a></li>
+                <li class="subhed"><a href="#8">Operations on Binary Tree</a></li>
+                <li class="subhed"><a href="#9">Binary Tree Traversal Techniques</a></li></ol>
+                <ul type="1">
+                <li class="subhed"><a href="#10">Inorder Tree Traversal Technique</a></li>
+                <li class="subhed"><a href="#11">Inorder Tree Traversal Technique (Recursive code)</a></li>
+                <li class="subhed"><a href="#12">Preorder Tree Traversal Technique</a></li>
+                <li class="subhed"><a href="#13">Postorder Tree Traversal Technique</a></li>
+                <li class="subhed"><a href="#14">Level order Tree Traversal Technique</a></li></ul><br>
+                <li class="subhed"><a href="#15">Expression Tree</a></li>
+                <li class="subhed"><a href="#16">Construction of an Expression Tree</a></li><br>
+                <li class="subhed"><a href="#17">Threaded Binary Trees</a></li>
+                <ol type="1">
+                <li class="subhed"><a href="#18">Preorder Threaded Binary tree</a></li>
+                <li class="subhed"><a href="#!9">In Order Threaded Binary tree</a></li>
+                <li class="subhed"><a href="#20">Postorder Threaded Binary tree</a></li></ol>
+                <li class="subhed"><a href="#21">Strategy for In Order Threaded Binary tree</a></li><br>
+                <li class="subhed"><a href="#22">Binary Search Tree</a></li>
+                <li class="subhed"><a href="#23">OPERATIONS on Binary Search Tree</a></li>
+                <li class="subhed"><a href="#24">Finding an element in a Binary Search Tree</a></li>
+                <li class="subhed"><a href="#25">Finding the minimum element in a Binary Search Tree</a></li>
+                <li class="subhed"><a href="#26">Inserting an element in a Binary Search Tree</a></li>
+                <li class="subhed"><a href="#27">Deleting an element in a Binary Search Tre</a></li><br>
+                <li class="subhed"><a href="#28">Priority Queues</a></li>
+                <li class="subhed"><a href="#29">Operations</a></li>
+                <li class="subhed"><a href="#30">Applications</a></li>
+                <li class="subhed"><a href="#31">Implementation of Priority Queues</a></li><br>
+                <li class="subhed"><a href="#32">Heap</a></li>
+                <li class="subhed"><a href="#33">Binary Heap</a></li><br>
+                <li class="subhed"><a href="#34">AVL Trees</a></li>
+                <li class="subhed"><a href="#35">Minimum and Maximum number of nodes in an AVL Tree of height</a> </li>
+                <li class="subhed"><a href="#36">AVL Tree declaration</a></li>
+                <li class="subhed"><a href="#37">AVL Tree - Insertion</a></li><br>
+                <li class="subhed"><a href="#38">B-Trees</a></li>
+                <li class="subhed"><a href="#39">B-Trees Deletion</a></li><br>
+                <li class="subhed"><a href="#40">GRAPHS</a></li>
+                <li class="subhed"><a href="#41">Representation of Graphs</a></li>
+                <li class="subhed"><a href="#42">Graph Traversals</a></li>
+                <ol type="1">
+                <li class="subhed"><a href="#43">DFS Traversal</a></li>
+                <li class="subhed"><a href="#44">BFS Traversal</a></li>
+                <li class="subhed"><a href="#45">BFS and DFS applicatons</a></li></ol>
+                <li class="subhed"><a href="#46">Topological Sorting</a></li>
+                <li class="subhed"><a href="#47">Applications of Topological Sorting</a></li><br>
+                <li class="subhed"><a href="#48">Shortest-Path Algorithms</a></li>
+                <li class="subhed"><a href="#49">Dijkstra’s Algorithm</a></li>
+                <li class="subhed"><a href="#50">Dijkstra’s Algorithm (psuedo code)</a></li>
+                <li class="subhed"><a href="#51">Limitation of Dijkstra’s algorithm</a></li>
+                <li class="subhed"><a href="#52">Bellman – Ford Algorithm</a></li>
+                <li class="subhed"><a href="#53">Bellman – Ford (pseudo code</a></li>
+                <li class="subhed"><a href="#54">Minimum Spanning Tree</a></li>
+                <ol type=1>
+                <li class="subhed"><a href="#55">Prims Algorithm</a></li>
+                <li class="subhed"><a href="#56">Kruskal Algorithm</a></li></ol>
+                <li class="subhed"><a href="#57">Disjoint set ADT</a></li>
+                <li class="subhed"> <a href="#58">operations of Disjoint set</a></li>
+                <li class="subhed"><a href="#9">Union by Size</a></li>
+                <li class="subhed"><a href="#60">Union by height</a></li>
+            </ul>
+    <h4 id="1">Trees</h4>
+    <pre class="data">
+<b>TREE:</b>
+Tree is a non-linear data structure and it is a collection of nodes. The collection may be empty ; otherwise, a tree consists of a distinguished node called root, r, and zero or more non empty (sub) trees T1, T2, ….Tk, each of whose roots are connected by a directed edge from r”.
+
+<B>NODE:</B>
+• In tree data structure, every individual element is called as Node. 
+
+• Node in a tree datastructure stores the actual data and a link to next element in hierarchical structure.
+    </pre>
+    <h4 id="2">Trees Terminology</h4>
+    <pre class="data">
+<B>Root:</B>Top most node in the tree. If Root is NULL means that tree is empty. Tree contains only one Root node. 
+
+<B>Edge:</B>The connecting link between any two nodes in a tree is called as EDGE. In a tree with 'N' number of nodes there
+will be a maximum of 'N-1' number of edges.
+
+<B>PARENT:</B> The node which is a predecessor of any node is called as PARENT NODE. The node which has child / children. The node which has a branch from it to any other node is called a parent node.The root node does not have any parent.
+
+<B>Child:</B>The node which has a link from its parent node is called as child node. The node which is descendant of any node is called as CHILD Node. Parent node can have any number of child nodes. • All the nodes except root are child nodes
+
+<B>Siblings:</B>The nodes which belong to same Parent are called as SIBLINGS. In simple words, the nodes with the same parent are called Sibling nodes
+
+<B>Leaf:</B> The node which does not have a child is called 
+as LEAF Node.In simple words, a leaf is a node with no child.
+
+<B>Internal Node:</B>The node which has at least one child is called 
+as INTERNAL Nodes. In simple words, an internal node is a node with at least one child
+
+<B>Degree:</B> The Degree of a node is the total number of children it has. The highest degree of a node among all the nodes in a tree is called as 'Degree of Tree'
+
+<B>Level:</B> The root node is said to be at Level 0 and thechildren of root node are at Level 1 and the children of the nodes which are at Level 1 will be at Level 2 and so on.
+
+<B>Height:</B> The total number of edges from leaf node to a particular
+node in the longest path is called as HEIGHT of that node. Height of the root node is said to be height of the tree. • height of all leaf nodes is '0'.
+
+<B>Depth:</B> The total number of edges from root node to particular node is called as DEPTH of that nodeThe total number of edge  from root node to a leaf node in the longest path is said to be Depth of the tree. Depth of root node is 0.
+
+<B>Path:</B> Sequence of nodes and edges from one node to another node is called as path. Number of nodes in a path is the Path Length.
+
+<B>Sub-Tree:</B> Each child from a node forms a sub-tree recursively.Every child node will form a sub-tree on its parent node.
+
+<B>In-degree:</B> It is the number of edges arriving at a node.The root node is the only node that has an in-degree equal to zero. 
+
+<B>Out-degree:</B> Similarly, out-degree of a node is the number of edges leaving that node. Usually, leaf nodes out-degree is zero
+    </pre>
+    <h4 id="3">Representation of Trees
+    </h4>
+    <pre class="data">
+One way to represent tree is using the List representation.
+
+The root node comes first followed by the sub tress
+
+The dis advantage of this approach is that it requires too many pointers
+
+    </pre>
+    <h4 id="4">Binary Tree</h4>
+    <pre class="data">
+Any tree can be called as Binary Tree if every node in the tree has either zero or one  or two children only (A Tree where no node has more than two children).
+    </pre>
+    <h4 id="5">Types of Binary Trees</h4>
+    <pre class="data">
+1. <B>Strict Binary tree</B> – It is a binary tree where each node has exactly two children or no children.
+
+2. <B>Full Binary Tree</B> - It is a binary tree where each non leaf node has exactly two children and all the leaf nodes are at the same level
+
+3. <B>Complete Binary tree</B> – In a complete binary tree, all the levels of a tree are filled entirely except the last level. In the last level, nodes might or might not be filled fully and also all the nodes should be filled from the left.
+    </pre>
+    <h4 id="6">Properties of Binary Trees</h4>
+    <pre class="data">
+In a binary tree
+
+• At level l maximum 2<sup>l</sup> nodes.
+
+• The number of nodes in a full binary tree of height h is 2<sup>h+1</sup> – 1, since there are h levels and at each level i there are exactly 2<sup>i</sup> nodes, so 2<sup>0</sup> + 2<sup>1</sup> + 2<sup>2</sup> + … +2<sup>h</sup> = 2h+<sup>h+1</sup> – 1.
+
+• The number of nodes in a complete binary tree is in between 2<sup>h</sup>(minimum) and 2<sup>h+1</sup> - 1(maximum).
+
+• The number of leaf nodes in a full binary tree is 2<sup>h</sup>.
+    </pre>
+    <h4 id="7">Representation of Binary Trees</h4>
+    <pre class="data">
+Binary trees can be represented using two ways:
+
+<b>METHOD 1:</b>
+
+1. We can store binary trees in arrays, and specially if the tree is a complete binary tree. In this method, if a node has an index i, its children are found at indices 2*i+1 and 2*i+2, while its parent (if any) is found at index floor((i-1)/2) (assuming the root of the tree stored in the array at an index zero). 
+
+This method wastes 2h+1 – n – 1 for a tree of height h with n nodes.
+
+<B>METHOD 2:</B>
+
+2. The second alternative method is Linked Representation (pointer based one), where each node is partitioned into three parts, one is used to store the actual data of that node, another one is used to store the left node address, another one is used to store right node address. In the absence of child it stores NULL value.
+    </pre>
+    <h4 id="8">Operations on Binary Tree</h4>
+    <pre class="data">
+<B>Basic Operations:</B>
+
+1. Inserting an element into a tree
+
+2. Deleting an element from the tree
+
+3. Searching an element in a tree
+
+4. Traversing (displaying) the tree
+
+<B>Auxiliary Operations:</B>
+
+1. Finding the size of the tree
+
+2. Finding the height of the tree
+    </pre>
+    <h4 id="9">Binary Tree Traversal Techniques</h4>
+    <pre class="data">
+
+<B>TREE TRAVERSAL:</B>The problem of visiting the nodes of a tree is called tree traversal. 
+
+There are mainly three different traversal techniques, 
+
+1. Inorder traversal
+2. Preorder Traversal
+3. Postorder Traversal
+
+One more traversal technique called level order traversal is also used.
+    </pre>
+    <h4 id="10">Inorder Tree Traversal Technique</h4>
+    <pre class="data">
+In inorder traversal the vising of the nodes are defined as follows
+
+1. Traverse the Left subtree in Inorder
+2. Process the root
+3. Traverse the Right subtree in Inorder
+
+The visiting order in Inorder traversal is {Left Root Right}
+
+    </pre>
+    <h4 id="11">Inorder Tree Traversal Technique (Recursive code)</h4>
+    <pre class="data">
+void Inorder(node *r)
+
+{ if(r)
+{Inorder(r → left); 
+output r → data; 
+Inorder(r → right); }
+}
+    </pre>
+    <h4 id="12">Preorder Tree Traversal Technique</h4>
+    <pre class="data">
+In preorder traversal the vising of the nodes are defined as follows
+
+1. Process the root
+2. Traverse the Left subtree in preorder
+3. Traverse the Right subtree in preorder
+
+The visiting order in Inorder traversal is {Root Left Right}
+    </pre>
+    <h4 id="13">Postorder Tree Traversal Technique</h4>
+    <pre class="data">
+In post order traversal the vising of the nodes are defined as follows
+
+1. Traverse the Left subtree in postorder
+2. Traverse the Right subtree in postorder
+3. Process the root
+
+The visiting order in Inorder traversal is {Left Right Root}
+    </pre>
+    <h4 id="14">Level order Tree Traversal Technique</h4>
+    <pre class="data">
+In level order traversal technique the nodes are visited level by level starting from the root, and going from left to right. The level order traversal requires a queue data structure.
+
+    </pre>
+    <h4 id="15">Expression Tree</h4>
+    <pre class="data">
+<B>EXPRESSION TREE:</B>A binary tree is called expression tree if the operands of the expression are stored at leaves and the operators of the expression are stored at internal nodes (non-leaf nodes).
+    </pre>
+    <h4 id="16">Construction of an Expression Tree</h4>
+    <pre class="data">
+An expression tree can be constructed from an postfix expression or prefix expression
+<B>
+for constructing the expression tree from the given postfix expression:</B>
+(Create a stack to store the nodes)
+
+1. Read the each symbol from the postfix expression from left to right
+
+2. If the symbol read is an operand then create a new node and initialize its both left and right pointers with null. Store the operand into the node. Now push this node into the stack.
+
+3. If the symbol read is an operator (assume binary operator) then pop the top two nodes from the stack, assume these are T1(T1 at the top of the stack) and T2. Now create a new node, lets call it as T3 and store the operator in it. Store T2 in T3’s left pointer and store T1 in T3’s right pointer.
+    </pre>
+    <h4 id="17">Threaded Binary Trees</h4>
+    <pre class="data">
+<B>THREADED BINARY TREE:</B>
+
+The idea is replace the null links with the pointers called the threads to the other nodes in the tree. The common convention is replace the NULLs with the predecessor/successors information.
+
+Generally we store the predecessor information in NULL left pointers and
+successor information in right pointer
+    </pre>
+    <h4 id="18">Preorder Threaded Binary tree</h4>
+    <pre class="data">
+<B>Preorder Threaded Binary tree</B> – If we store the preorder predecessor information in NULL left pointers and preorder successor information in right pointer then it is called as preorder threaded binary tree.
+    </pre>
+    <h4 id="19">In Order Threaded Binary tree</h4>
+    <pre class="data">
+<B>In Order Threaded Binary tree</B> – If we store the inorder predecessor information in NULL left pointers and inorder successor information in right pointer then it is called as inorder threaded binary tree.
+    </pre>
+    <h4 id="20">Postorder Threaded Binary tree</h4>
+    <pre class="data">
+<B>Postorder Threaded Binary tree</B> – If we store the post order predecessor information in NULL left pointers and post order successor information in right pointer then it is called as preorder threaded binary tree.
+
+    </pre>
+    <h4 id="21">Strategy for In Order Threaded Binary tree </h4>
+    <pre class="data">
+• If the p → Rtag is normally equal to zero, we will replace it by a pointer to the node which would be printed after P when traversing the tree in inorder.
+
+• A null of p → left is replaced by a pointer to the node which immediately precedes node p in inorder. 
+    </pre>
+    <h4 id="22">Binary Search Tree</h4>
+    <pre class="data">
+<B>BINARY SEARCH TREE:</B>Binary Search tree can be defined as a class of binary trees, in which the nodes are arranged in a specific order. This is also called ordered binary tree.
+
+The most widely used binary type of tree is Binary Search Tree
+
+<B>PROPERTIES OF BINARY SEATCH TREE:</B>
+
+1. Every element has a key and no two elements have the same key’
+
+2. The keys in the left sub tree are smaller than the key value of its root
+
+3. The keys in the right subtree are greater than the key value of its root
+
+4. The left and right sub trees are also binary search trees
+
+    </pre>
+    <h4 id="23">OPERATIONS on Binary Search Tree</h4>
+    <pre class="data">
+1. Find an element/ Finding the minimum/Finding the maximum
+
+2. Inserting an element into the Binary Search Tree
+
+3. Deleting an Element into the Binary Search Tree
+    </pre>
+    <h4 id="24">Finding an element in a Binary Search Tree</h4>
+    <pre class="data">
+1. The element to be searched is compared with the root element, if both are matches then we return that node.
+
+2. If searching element is less than the root element then we search in the left sub tree of the current node.
+
+3. If the searching element is greater than the root element then we search in the right sub tree of the current node.
+
+<b>Time Complexity (in worst case / when the tree is skewed one (All the nodes are in one side))</b> = O(n)
+
+<b>Time Complexity (in average case)</b> = O(log n)
+
+<b>space complexity</b>: O(n), for recursive stack
+
+    </pre>
+    <h4 id="25">Finding the minimum element in a Binary Search Tree</h4>
+    <pre class="data">
+BST *Find_Min(BST *r) // Recursive version
+
+{ if(r == NULL) return NULL;
+if (r --> left == NULL) return r; // Element node address
+else Find_Min(r --> left);
+}
+
+<b>Time Complexity (inworst case / when the tree is skewed one (All the nodes are in one side))</b> = O(n)
+
+<b>Time Complexity (in average case)</b>= O(log n)
+
+<b>space complexity</b> : O(n)
+    </pre>
+    <h4 id="26">Inserting an element in a Binary Search Tree</h4>
+    <pre class="data">
+To insert a data into the binary search tree, find the location by using mechanism used in find() operations, if the element is already there then simply neglect and exit from function. Otherwise insert the data at the last location on the path traversed.
+
+<b>Time complexity (worst case)</b> - O(n)
+
+<b>Time complexity (average case)</b> - O(log n)
+    </pre>
+    <h4 id="27">Deleting an element in a Binary Search Tree</h4>
+    <pre class="data">
+<b>CASE 1</b>
+
+The deleted element is a leaf node then return NULL to its parent node.
+
+<b>CASE 2</b>
+
+The deleted element has one child, then send the child node to the parent of the deleted node.
+
+<b>CASE 3</b>
+
+The deleted node has both left and right child, then the preferred strategy is to replace key of this node with the largest element of the left subtree and recursively delete that node.
+    </pre>
+    <h4 id="28">Priority Queues</h4>
+    <pre class="data">
+<B>PRIORITY QUEUE:</B>to find the minimum/maximum element in a set of elements, we use priority queues.
+
+Priority Queue is a Data Structure that allows at least the following two operations:
+
+1. Insert
+2. Delete Minimum (or Delete Maximum)
+
+These operations are equivalent to Enqueue and Dequeue operations of a queue, but in priority queue the order in which elements are inserted in the queue may not be the same order in which they were processed.
+    </pre>
+    <h4 id="29">Operations</h4>
+    <pre class="data">
+1. Insert (key, data) – Inserts data with key into the priority queue
+
+2. Delete Min/ Delete Maximum
+
+3. find min/max
+    </pre>
+    <h4 id="30">Applications</h4>
+    <pre class="data">
+1. In data compression algorithms like, in Huffman coding algorithm
+
+2. In shortest path algorithms - Dijkstra’s Algorithm
+
+3. In finding the minimum spanning tree algorithms – Prims algorithm
+
+4. Finding the kth smallest element
+    </pre>
+    <h4 id="31">Implementation of Priority Queues</h4>
+    <pre class="data">
+1. <b>Using the arrays</b> - Insert the elements into the array and when deleting the element find the smallest element and delete it.
+
+2. <b>Using Linked Lists</b> – It is very similar to arrays, instead of arrays here we will use the linked lists.
+
+3. <b>Binary Search Tree Implementation</b> – Both insertion and deletions will take O(logn ) in average case.
+
+4. <b>Using the binary Heap implementation</b> – Gives O(log n) complexity in all the insertion
+    </pre>
+    <h4 id="32">Heap</h4>
+    <pre class="data">
+Heap is a tree which must satisfy two properties
+
+1. Structure Property - The tree must be completely filled, with the possible exception of the bottom level, which is filled from left to right (complete binary tree). All the leaves must be at level h or h-1.
+
+2. Order Property – The key of parent node must be smaller (or larger ) than its children.
+
+Types of Heaps
+1. Min heap – The value of a node must be less than or equal to its children
+
+2. Max heap - The value of a node must be greater than or equal to its children.
+    </pre>
+    <h4 id="33">Binary Heap</h4>
+    <pre class="data">
+<b>BINARY HEAP: </b>Any heap is called binary heap if each node may have up to two children.
+
+<b>Representing Heaps</b> – Heaps can be represented using arrays. For any element in array at position i, the left child is in position 2*i+1 and the right child is in the position 2*i +2 and the parent is in position floor((i-1)/2).
+
+<b>Inserting a element into the binary heap</b> - Insert the new element in the next available location in the array. If it violates the heap order property the new element is percolated up(swapping with its parent) the heap until the correct location is found.
+
+<b>Deleting the element from the Min Heap</b> – Replace the root element with the last element. Slide down (heapify – swap with its children) to the minimum of the of the children till it finds it correct position.
+    </pre>
+    <h4 id="34">AVL Trees</h4>
+    <pre class="data">
+<b>AVL TEREE:</b>
+
+AVL tree is a self-balancing Binary Search Tree (BST) where the difference between heights of left and right subtrees cannot be more than one for all nodes. 
+    </pre>
+    <h4 id="35">Minimum and Maximum number of nodes in an AVL Tree of height</h4>
+    <pre class="data">
+<B>Minimum number of nodes in an AVL tree:</B>
+
+• Minimum number of nodes in an AVL tree is possible if the height of the left subtree and right subtree is differed by one. 
+ 
+Min(n(h)) = n(h-1) + n(h-2) + 1 = 1.44 log n = O(log n) 
+
+<B>Maximum number of nodes in an AVL tree:</B>
+
+• Maximum number of nodes in an AVL tree is possible if the height of the left subtree and right subtree is differed by zero. 
+ 
+Max(n(h)) = n(h-1) + n(h-1) + 1 ≅ log n = O(log n)
+    </pre>
+    <h4 id="36">AVL Tree declaration</h4>
+    <pre class="data">
+typedef struct AVLTree AVL;
+
+struct AVLTree {
+<data type> data;
+AVL *left
+AVL *right
+int height;};
+    </pre>
+    <h4 id="37">AVL Tree - Insertion</h4>
+    <pre class="data">
+find the proper place for the new element as we do in the Binary
+Search Tree and insert the new element. But after insertion the possibility is that it may violate the balance factor.
+
+So whenever after insertion there is a violation in balance factor then fix the size of the tree by rearranging the nodes.
+    </pre>
+    <h4 id="38">B-Trees</h4>
+    <pre class="data">
+<b>B TREE: </b>B-tree is a special type of self-balancing search tree in which each node can contain more than one key and can have more than two children. It is a generalized form of the binary search tree.
+    </pre>
+    <h4 id="39">B-Trees Deletion</h4>
+    <pre class="data">
+• We can perform deletion by finding the key to be deleted and removing it. 
+
+• If this key was only one of the two keys in a node, then its removal leaves only one key. 
+
+• We can fix this by combining this node with the a sibling. 
+
+• If the sibling has only two keys, we combine the two nodes into a single node with three keys. 
+
+• The parent of this node now looses a child, so we might have percolate this strategy all the way to the top. 
+
+• If the root looses its second child, then the root is also deleted and the tree becomes one level shallower. 
+
+• As we combine the nodes, we must remember to update the information kept at the internal nodes.
+    </pre>
+    <h4 id="40">GRAPHS</h4>
+    <pre class="data">
+<B>GRAPHS:</B> A TREE WITH CYCLES IS CALLED A GRAPH
+
+<B>DIRECTED GRAPH:</B>If the pair is ordered, then the graph is directed graph
+
+<B>undirected graph:</B>If the pair is not ordered, then the graph is undirected graph
+
+<b>Applications of Graphs:</b>
+
+1. To represent the Networks (Electronic circuits, Transportation networks, Highway network, Flight network, Computer networks, etc)
+
+2. For representing the dependency of tables in a database
+    </pre>
+    <h4 id="41">Representation of Graphs</h4>
+    <pre class="data">
+1. <b>Adjacency Matrix</b> – A matrix of size n X n is maintained, where n is the number of vertices. If there is an edge from vertex v to vertex w then adj_Mat[v, w] = 1, if it is aunweighted graph, otherwise fill with the cost of the edge. If there is no edge between v and w then set the value to 0. (Used in dense graphs – Number of edges closed to the
+maximum possible number of edges)
+
+2. <b>Adjacency List</b> - In this representation all the vertices connected toa vertex v are listed on an adjacency list for that vertex v. (Used in sparse graphs – Graphs with only fewer edges)
+
+3. <b>Adjacency Set</b> - Similar to adjacency list but instead of using the Linked Lists Disjoint sets are used.
+    </pre>
+    <h4 id="42">Graph Traversals</h4>
+    <pre class="data">
+To work with the graphs we need a mechanism to visit the nodes in the graph, there exist two popular techniques for traversing the graphs:
+
+1. Depth First Search (DFS)
+2. Breadth First Search (BFS)
+    </pre>
+    <h4 id="43">DFS Traversal</h4>
+    <pre class="data">
+DFS works similar to the pre-order traversal technique of the tree. It works in the following manner:
+
+“Starting at some vertex, v, we process v and then recursively all the
+vertices adjacent to v. To avoid cycles we need to remember which nodes are visited.”
+
+<b>PROCESS:</b>
+
+• By starting at vertex v it considers the edges from v to other vertices. 
+
+• If the edge leads to an already visited vertex, then backtrack to the current vertex v. 
+
+• If an edge leads to unvisited vertex, then go to that vertex and start processing that vertex. 
+
+• The new vertex becomes the current vertex. 
+
+• Follow this procedure until we reach dead-end. At this point do the backtracking.
+
+<B>Time Complexity:</B> O( |E| + |V|)
+    </pre>
+    <h4 id="44">BFS Traversal</h4>
+    <pre class="data">
+“Starting at some vertex, which is at level 0. We process v and then process all the vertices at level (vertices whose distance is one from the start vertex). In the second stage it process all the vertices in level 2 (these are vertices which are adjacent to level one). This process is continued till all the levels are processed. To avoid cycles we need to remember which nodes are visited.”
+
+BFS uses queue data structure.
+
+<B>Time Complexity:</B> O( |E| + |V|)
+    </pre>
+    <h4 id="45">BFS and DFS applicatons</h4>
+    <pre class="data">
+<B>Applications of DFS:</B>
+
+1. Topological sorting
+2. Finding connected components
+3. Finding the articulation points (Cut vertices of the graph)
+4. Finding the strongly connected components
+5. Solving puzzles such as mazes
+
+<B>Applications of BFS:</B>
+
+1. Finding all connected components in a graph
+2. Finding the nodes with in one connected component
+3. Finding the shortest path betwee
+    </pre>
+    <h4 id="46">Topological Sorting</h4>
+    <pre class="data">
+<B>TOPOLOGICAL SORTING: </B>“A topological sort is an ordering of vertices in a directed acyclic graph, such that if there is a path from u to v, then v appears after u in the ordering.”
+
+
+<B>PROCESS:</B>
+1. Compute the indegree of all the vertices. Set a counter to 0. 
+
+2. Find the vertices whose indegree is zero and push them into a queue.
+
+3. If the queue is empty then Display an error and stop the algorithm.
+
+4. Dequeue the vertex from queue and call it as v. 
+
+5. Output v and decrease the indegree of all vertices u, where u has an incoming edge from v (v and u are adjacent). If the indegree of u is zero then enqueue it into queue.
+
+6. Increment the counter. Repeat steps 3 and 5 if the counter is less than the number of vertices. 
+
+<B>Time complexity :</B> 
+
+O(|V|2) (when searching for a vertex which has indegree zero in an array which maintains the indegree of vertices)
+
+: O(|E| + |V|) (when we maintain the vertices whindegree is zero separately in a new data structure (queue or stack) )
+    </pre>
+    <h4 id="47">Applications of Topological Sorting</h4>
+    <pre class="data">
+
+1. Representing course prerequisite
+
+2. Detecting deadlocks
+
+3. Pipeline of computing jobs
+
+4. Checking for symbolic link loop
+
+5. Evaluating formulae in spreadshee
+    </pre>
+    <h4 id="48">Shortest-Path Algorithms</h4>
+    <pre class="data">
+DONT KNOW
+    </pre>
+    <h4 id="49">Dijkstra’s Algorithm</h4>
+    <pre class="data">
+It is a greedy algorithm that solves the single-source shortest path problem for a directed graph G = (V, E) with nonnegative edge weights, i.e., w (u, v) ≥ 0 for each edge (u, v) ∈ E.
+    </pre>
+    <h4 id="50">Dijkstra’s Algorithm (psuedo code)</h4>
+    <pre class="data">
+Void Dijkstra (Table T)
+{ Vertex v, w;
+for( ; ; ) 
+{ v = smallestUnknownDistanceVertex; // |V| in one iteration (there are V| iterations (if we use arrays)
+
+if(v == Not A Vertex)
+break;
+
+T[v].known = True;
+for each w adjacent to v // |E| (total cost in all iterations)
+{ if(! T[w].known)
+{ if T[v].Dist + Cvw < T[w].Dist)
+{ Decrease (T[w]. Dist to T[v].Dist + Cvw);
+T[w]. Path = v;
+                    }
+                }
+            }
+        }
+} 
+
+<B>TIME COMPLEXITY</B> = O(|V|2 + |E| ) = O(|V|2 ) // if we use an array to store the vertices distances in an array
+
+<B>TIME COMPLEXITY</B> = O( |V| log|V| + |E| log|V|) = O(||E| log |V|) // if we use priority queue
+    </pre>
+    <h4 id="51">Limitation of Dijkstra’s algorithm</h4>
+    <pre class="data">
+    -->It may not work if any edge has a negative cost.
+    </pre>
+    <h4 id="52">Bellman – Ford Algorithm</h4>
+    <pre class="data">
+<B>IDEA:</B>
+
+Create a queue and insert source vertex s into the queue.
+
+Dequeue a vertex from Queue and assume it is v. Find all vertices w adjacent vertices to v. If the distance to v from s and the distance from v to w is less than the present distance to w then update the distance ( update its parent also) and enqueue w if it is not in the queue.Repeat this procedure until there are vertices in Queue.
+    </pre>
+    <h4 id="53">Bellman – Ford (pseudo code</h4>
+    <pre class="data">
+<B>Time Complexity</B> = O( |E| . |V|)
+    </pre>
+    <h4 id="54">Minimum Spanning Tree</h4>
+    <pre class="data">
+<B>Minimum Spanning Tree (MSP)</B> – Minimum Spanning Tree of an undirected graph G is a tree formed from graph edges that connects all the vertices of G at lowest total cost.
+
+The following are the two algorithms exist to find the MSPs :
+
+1. Prims Algorithm
+2. Kruskal Algorithm
+
+Both these algorithms works on the principle of Greedy Techniques
+    </pre>
+    <h4 id="55">Prims Algorithm</h4>
+    <pre class="data">
+<B>Idea of Prims Algorithm</B>- 
+
+“Grow the tree in successive stages. In each stage, one node is picked as the root, and we add an edge, and thus an associated vertex, to the tree. At each stage, a new vertex added to the tree by choosing an edge (u, v) such that the cost of (u, v) is the minimum among all edges where u is in the tree and v is not.”
+
+The time complexity is O(|V|2) without heaps and O(|E| log|V|) using binary heaps.
+    </pre>
+    <h4 id="56">Kruskal Algorithm</h4>
+    <pre class="data">
+<B>Idea of Kruskal’s Algorithm</B>- 
+
+“It is also working on the principle of greedy; Continuously select the edges in order of smallest weight and accept an edge ifit doesnot cause a cycle”.
+
+Formally, Kruskal’s algorithm maintains a forest – collection of trees. Initially, there are |V| single – node trees. Adding an edge merges two trees into one. When the algorithm terminates, there is only one tree, and this is the minimum spanning tree.
+
+<B>Algorithm:</B>
+
+1. Sort all the edges in ascending order of their weight.
+
+2. Select the smallest edge e. 
+
+3. Check if the inclusion of e forms a cycle or not with the spanning tree formed so far. 
+
+4. If cycle is not formed due to the inclusion of e, then include this edge, otherwise  discard it.
+
+5. Repeat step 2 to 4 until there are |V|-1 edges added to the spanning tree.
+
+<B>Time Complexity</B> = |E| (log |E| + log |E| + log |E|) = O(|E| log |E|)
+
+Since |E| may be O(|V|2), in this case time complexity = O(|E| log |V|)
+    </pre>
+    <h4 id="57">Disjoint set ADT</h4>
+    <pre class="data">
+<b>Disjoint set ADT</b>
+
+This is a special data structure to solve the equivalence problem (used to represent the collection of sets, where in each set all the elements are related).
+    </pre>
+    <h4 id="58">operations of Disjoint set</h4>
+    <pre class="data">
+1. <b>Find</b> – Returns the name of the set which contains the given element.
+
+2. <b>Union</b> – Merges the two the equivalences classes contains a and b into a new equivalence class.From set point of view, the result of U is to create a new set S<sub>k</sub> = S<sub>i</sub> U S<sub>j</sub>, destroying the original and preserving the disjointness of all the sets.
+    </pre>
+    <h4 id="59">Union by size</h4>
+    <pre class="data">
+<b>Union by Size (smart union)</b>
+
+• Make the root of the larger tree as the new root and it guarantees that the depth of the tree at most log N. 
+
+• So a sequence of M find operations takes O(M log N) time.
+
+• How do we incorporate the size of the tree?
+
+a. Instead of zero maintain the size with a negative value (initially all the single node trees stores -1).]
+    </pre>
+    <h4 id="60">Union by height</h4>
+    <pre class="data">
+<b>Union by height (smart union)</b>
+
+• An alternative implementation is union by height, instead of merging the trees by size merge by height and it also guarantees the depth of the tree is at most log N.
+    </pre>
+<a href="#top">BACK TO TOP</a>
+
+
+</body>
+</html>
